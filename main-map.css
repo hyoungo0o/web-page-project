@@ -1,0 +1,34 @@
+    /* 지도 */
+    #map {
+        width: 100%;
+        height: 37.5rem;
+    }
+    .contactContainer {
+        display: flex;
+        align-items: flex-start;
+        align-items: center;
+        border: 1px solid #595959;
+        padding: 5rem;
+        margin-bottom: 7.5rem;
+    }
+    .addressInfo {
+        width: 18.75rem;
+        margin-right: 1.25rem;
+        padding: 0.625rem;
+        /*color: #ffffff;*/
+    }
+    .contact-last-border {
+        position: relative;
+        padding-bottom: 0.625rem;
+        margin-bottom: 0.625rem;
+        margin-top: 0.625rem;
+    }
+    .contact-last-border::after {
+        content: '';
+        position: absolute;
+        bottom: -0.1rem;
+        left: 0;
+        width: 105%;
+        border-bottom: 1px solid #595959;
+    }
+    /* 지도 끝 */

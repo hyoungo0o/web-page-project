@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형에 꼭 써야함 -->
+  <title>hlsystem.com</title>
+  <link rel="stylesheet" href="/css/solutions-xdmp.css">
+  <link rel="stylesheet" href="/css/contact-map.css">
+  <link rel="stylesheet" href="/css/screen-1919px.css">
+  <link rel="stylesheet" href="/css/solutions-sqle.css">
+  <link rel="stylesheet" href="/css/solutions-etc.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/e70fd007d1.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body class="etc-body-background">
+
+<div class="solutions-background-overlay"></div>
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+  <div class="container">
+    <a href="/hlsystem/about/introduce">
+      <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+    </a>
+    <div class="solutions-nav-links">
+      <ul id="contact-nav-1">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li id="hlsystem">
+          <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+          <div class="contact-dropdown contact-mainDropDown">
+            <p data-url="/hlsystem/about/introduce">회사소개</p>
+            <p data-url="/hlsystem/about/ceo">CEO</p>
+            <p data-url="/hlsystem/about/history">History</p>
+            <p data-url="/hlsystem/about/contact">오시는길</p>
+          </div>
+        </li>
+        <li id="solutions">
+          <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+          <div class="contact-dropdown contact-mainDropDown">
+            <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+            <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+            <!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+            <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+          </div>
+        </li>
+        <li><a href="/hlsystem/business">BUSINESS</a></li>
+        <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+        <li id="recruit">
+          <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+          <div class="contact-dropdown contact-mainDropDown">
+            <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+            <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+  window.addEventListener('scroll', function() {
+      var header = document.querySelector('.contact-hl-top-fixed');
+      var scrollPosition = window.scrollY;
+
+      if (scrollPosition > 0) {
+          header.classList.add('active');
+      } else {
+          header.classList.remove('active');
+      }
+  });
+
+  document.querySelectorAll('p[data-url]').forEach(function(element) {
+      element.addEventListener('click', function() {
+          var url = element.getAttribute('data-url');
+          window.location.href = url;
+      });
+  });
+</script>
+<!---->
+
+<div class="solutions-container">
+  <h3 class="solutions">Solutions</h3>
+  <p class="solutions-sub btn-shine">Ask how <strong>&nbsp;H&L SYSTEM&nbsp;</strong> can drive business value for your company</p>
+  <div class="solutions-wrap">
+    <a href="/hlsystem/solutions/solutions_xdmp" class="solutions-wrap-tap">XDMP</a>
+    <a href="/hlsystem/solutions/solutions_sqle" class="solutions-wrap-tap">SQLe</a>
+    <!--        <a href="/hlsystem/solutions/solutions_insurance" class="solutions-wrap-tap">Banka Insulance</a>-->
+    <!--        <a href="/hlsystem/solutions/solutions_cloud" class="solutions-wrap-tap">Cloud</a>-->
+    <a href="/hlsystem/solutions/solutions_etc" class="solutions-wrap-tap active">Etc</a>
+  </div>
+</div>
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/solutions-active.js"></script>
+
+
+<h2 class="etc-headline" data-aos="fade-up">
+  더 다양한 맞춤형 솔루션들을
+  <br>확인해 보세요.
+</h2>
+
+<!-- Slider main wrapper -->
+<div class="swiper-container-wrapper" data-aos="fade-up" data-aos-delay="150" data-aos-duration="150">
+  <!-- Slider main container -->
+  <div class="swiper-container gallery-top">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="/files/so-smartBank.jpg">
+        <div class="title">Smart Bank</div>
+        <div class="description">스마트뱅크 시스템은 J2EE 기반 컴포넌트로 구축되었고 탄탄한 프레임워크 기반에 유연성을 갖는 애플리케이션 시스템으로 글로벌 소매 및 기업 뱅킹 패키지용으로 최적화 되어 있습니다.</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="/files/so-solarEnergy.jpg">
+        <div class="title">Solar Energy</div>
+        <div class="description">태양광발전시스템의 효율 향상을 위해 IT 기술과의 융합에 의한 환경/상황요인에 대응하는 감시 및 제어 통합모니터링 기술을 더욱 확장시켜 태양광모듈 냉각 장치 및 트랙커 등 발전량 증대 설비도 감시 및 제어하는 차세대 고효울 태양광 스마트 시스템 개발을 통해 태양광 발전량 20%이상 향상 및 발전원가 절감 30%이상의 효과 달성을 목표하고 있습니다.
+
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="/files/so-bigData.jpg">
+        <div class="title">Big Data</div>
+        <div class="description">빅데이터가 ICT분야의 새로운 패러다임으로 부상하면서 데이터를 적극 활용하여 데이터 기반 의사결정을 할 수 있는 전력분야 소셜 빅데이터 분석기반 경영 Risk 예측시스템 구축이 요구되고 있습니다.</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="/files/so-controlCenter.jpg">
+        <div class="title">Control Center</div>
+        <div class="description description-4">Http Session이란 Stateless한 Http Protocol을 보완하기 위하여 Client의 정보를 Cookie 및 서버 메모리에 저장하여 처리하는 방법입니다.
+          <br>세션 클러스터링은 분산되어 있는 다수의 WAS Instance를 세션을 공유하는 하나의 논리적 그룹으로
+          묶어 서비스 요청에 대한 사용자(Client) 입장의 위치 투명성을 제공하며, 부하분산 및 장비나 서버의
+          장애 시, 자동 Session Failover를 제공합니다.
+          <br>세션 클러스터링을 통해 사용자는 중단 없는 서비스를 사용할 수 있는 안정성을 보장 받을 수 있습니다.
+        </div>
+      </div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <!-- Slider thumbnail container -->
+  <div class="swiper-container gallery-thumbs">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" style="background-image: url('https://static.wixstatic.com/media/690cba3bf279576fc7980f405b7a4c97.jpg/v1/fill/w_300,h_200,al_c,q_80,usm_0.66_1.00_0.01/690cba3bf279576fc7980f405b7a4c97.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('https://static.wixstatic.com/media/4bd0e5_78fce4056bd64726bcdb6950f0545737.jpg/v1/fill/w_300,h_205,al_c,q_80,usm_0.66_1.00_0.01/4bd0e5_78fce4056bd64726bcdb6950f0545737.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('https://static.wixstatic.com/media/4bd0e5_bdcf4cdc43c242ca94b307c366f88811.jpg/v1/fill/w_300,h_224,al_c,q_80,usm_0.66_1.00_0.01/4bd0e5_bdcf4cdc43c242ca94b307c366f88811.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('https://static.wixstatic.com/media/4bd0e5_ff6b2fa2921c456abf890c641f8d56c4.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01/4bd0e5_ff6b2fa2921c456abf890c641f8d56c4.jpg');"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/solutions-etc-swiper.js"></script>
+
+
+
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+  TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+
+<!-- 하단 -->
+<div class="solutions-bottom-last-box">
+  <div class="solutions-bottom-last-container">
+    <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate/" type="button">채용정보</a>
+    <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-contact" href="/hlsystem/about/contact/" type="button">오시는길</a>
+  </div>
+
+  <div class="solutions-bottom-info-container">
+    <p class="solutions-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+    <p class="solutions-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+    <p class="solutions-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+  </div>
+</div>
+<!---->
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 1000, // 애니메이션 지속 시간 (1초)
+      offset: 200, // 트리거가 발생하는 위치 조정
+      once: true // 애니메이션이 한 번만 실행되도록 설정
+  });
+</script>
+
+</body>
+</html>

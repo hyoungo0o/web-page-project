@@ -1,0 +1,597 @@
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-Bold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-ExtraBold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    body {
+        font-family: 'Pretendard-Regular', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #404040;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .contact-body-background {
+        background: white;
+    }
+    .about {
+        font-family: "Pretendard-ExtraBold", sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        padding-top: 11rem
+    }
+
+    /*상단*/
+    /* 프로그레스바 스타일 */
+    .scroll-progress {
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 0.375rem;
+        width: 0%;
+        background-color: red;
+        z-index: 100;
+        transition: width 0.3s ease; /* 너비 변화에 애니메이션 적용 */
+    }
+    .contact-hl-top-fixed {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* 수직 중앙 정렬 */
+        justify-content: center; /* 전체 아이템을 중앙에 정렬 */
+        position: fixed;
+        top: 0;
+        padding: 0.5rem;
+        z-index: 100;
+        transition: top 0.3s ease; /* top 속성에 변화가 있을 때 애니메이션 적용 */
+        box-sizing: border-box;
+        background-color: transparent;
+        padding-bottom: 3.9rem;
+        left: 0
+    }
+    .contact-hl-top-fixed.active {
+        top: 0;
+        left: 0;
+        background-color: #232323;
+        /*border-bottom: 1px solid #595959;*/
+        filter: drop-shadow(0 0px 5px #202020);
+        position: fixed;
+    }
+    .contact-company-logo {
+        position: relative;
+        width: 13.75rem;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        top: 31px;
+    }
+
+    /* 카테고리 */
+    .contact-nav-links {
+        display: flex;
+        justify-content: center; /* 수평 가운데 정렬 */
+        align-items: center; /* 수직 가운데 정렬 */
+        flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+        position: relative;
+        margin-top: -4%;
+    }
+    #contact-nav-1 {
+        position: relative;
+        border: none;
+        border-radius: 10em;
+        display: flex;
+        list-style: none;
+        padding: 10px;
+        margin-left: 300px; /* 기존 .nav-links의 margin-left 값을 적용 */
+        flex-grow: 1; /* 기존 .nav-links의 flex-grow 값을 적용 */
+        height: 0;
+    }
+
+    #contact-nav-1 li {
+        margin: 0;
+        position: relative;
+    }
+
+    #contact-nav-1 li a {
+        padding: 0.6em 2em;
+        top: 0.15rem;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+        font-family: 'Pretendard-Bold';
+    }
+
+    #contact-nav-1 li a:focus {
+        color: red;
+        font-family: 'Pretendard-ExtraBold';
+    }
+
+    #contact-nav-1 li a:hover {
+        color: #f00;
+        font-weight: bold;
+        text-decoration: underline;
+        font-family: 'Pretendard-ExtraBold';
+    }
+
+    #contact-nav-1 .slide1,
+    #contact-nav-1 .slide2 {
+        position: absolute;
+        display: inline-block;
+        height: 3em;
+        border-radius: 10em; /* 둥근 모서리 설정 */
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+    }
+
+    #contact-nav-1 .slide1 {
+        /*background-color: #D2A3A2;*/
+        background: #292929;
+        z-index: 2;
+        border-radius: 10em; /* 추가된 둥근 모서리 설정 */
+    }
+
+    #contact-nav-1 .slide2 {
+        opacity: 0;
+        /*background: #2a2a2a;*/
+        background: #292929;
+        z-index: 1;
+        border-radius: 10em; /* 추가된 둥근 모서리 설정 */
+    }
+
+    #contact-nav-1 .squeeze {
+        transform: scale(0.9);
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .contact-nav-arrow {
+         position: relative;
+         right: -0.5rem;
+     }
+
+        /* 드롭다운 */
+    .contact-mainDropDown {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+/*        background: #595959;*/
+        background: #303030;
+        position: relative;
+        z-index: 200; /* 네비게이션 바 위로 나타나도록 설정 */
+        border-radius: 4px;
+        box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease; /* 애니메이션 효과 설정 */
+        left: 0 !important;
+        top: 0.45rem !important;
+    }
+
+    /* 삼각형 꼭짓점 */
+    .contact-hl-top-fixed .contact-mainDropDown::before {
+        content: '';
+        position: absolute;
+        top: -0.59375rem;
+        left: calc(50% - 10px);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #303030;
+        z-index: 201;
+    }
+
+    .contact-hl-top-fixed .contact-mainDropDown.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 10px;
+    }
+
+    .contact-hl-top-fixed .contact-mainDropDown p {
+        color: #fff;
+        padding: 7.6px 18px;
+        cursor: pointer;
+        box-sizing: border-box;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .contact-hl-top-fixed .contact-mainDropDown p:hover {
+        color: #ff0000;
+        font-family: 'Pretendard-ExtraBold';
+        text-decoration: underline;
+    }
+
+
+/*    .contact-hl-top-fixed .contact-mainDropDown p:hover {
+        background-color: rgba(210, 163, 162, 0.7);
+        border-radius: 4px;
+    }*/
+    /**/
+
+.contact-overlay {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 41.6%;
+    background: #232323;
+    top: 0;
+    left: 0;
+}
+
+    /* about */
+    .contact-container {
+        position: relative;
+        left: -20%;
+    }
+    .contact-company-img {
+        width: 100vw;
+        height: 30rem;
+        margin-bottom: 3rem;
+        margin-top: 4rem;
+        transition: all 1s ease;
+        filter: grayscale(1);
+    }
+
+    .contact-company-img.shrink {
+        transform: scale(0.75) !important;
+        border-radius: 30px;
+        filter: unset;
+    }
+
+
+    .contact-wrap {
+        padding-top: 1rem;
+        position: relative;
+        top: 19px;
+    }
+
+    .contact-wrap-tap {
+        margin-right: 2rem;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+    }
+    .contact-wrap-tap::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.625rem;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: background-color 0.3s ease, width 0.3s ease;
+    }
+    .contact-wrap-tap.active,
+    .contact-wrap-tap:hover{
+        font-weight: bold;
+    }
+    .contact-wrap-tap.active::after,
+    .contact-wrap-tap:hover::after {
+        width: 100%; /* 가로 길이 100% */
+        background-color: red; /* 호버 시 색상 변경 */
+        height: 1.5px;
+    }
+    .contact-wrap-tap:hover::after {
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        animation: contact-wrap-underline 0.3s linear forwards;
+    }
+/* 형광펜(밑줄) 애니메이션 */
+@keyframes contact-wrap-underline {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+    .contact-blah {
+        color: #000000;
+        font-size: 2.5rem;
+        font-weight: bold;
+        position: relative;
+        top: -59px;
+    }
+    .contact-blah::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2.5px;
+        background: red;
+        bottom: -12px;
+        left: 0;
+    }
+
+    /* 지도 */
+    #contactMap {
+        width: 75rem;
+        height: 28rem;
+        border: 1.5px solid #b3b3b3;
+        border-radius: 20px 20px 0 0;
+        border-bottom-style: dashed;
+    }
+    .contact-contactContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1.5px solid #b3b3b3;
+        padding: 2rem 5rem;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        position: relative;
+        top: -60px;
+    }
+    .contact-addressInfo {
+        color: #000000;
+        top: 28px;
+        margin-bottom: 27px;
+        position: relative;
+        font-size: 1.3rem;
+    }
+    .contact-tel {
+        text-decoration: none;
+        color: #000000;
+    }
+    .contact-tel:visited {
+        color: #000000;
+    }
+    .contact-contact-last-border {
+        position: relative;
+        padding-bottom: 0.625rem;
+        margin-bottom: 0.625rem;
+        margin-top: 0.625rem;
+    }
+    .map-links {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 75rem;
+        font-family: 'Pretendard-Regular';
+        font-size: 12px;
+        border: 1.5px solid #b3b3b3;
+        background-color: #fff;
+        padding: 5px;
+        align-items: center;
+        box-sizing: border-box;
+        border-radius: 0 0 20px 20px;
+        border-top: unset;
+    }
+    .map-links a {
+        color: #404040;
+        text-decoration: none;
+        position: relative;
+        right: 5px;
+    }
+    .map-links a:hover {
+        text-decoration: underline;
+    }
+    .find-dash {
+        position: relative;
+        right: 5px;
+    }
+
+    .contact-kakao-img {
+        width: auto; /* 이미지 너비 자동으로 설정 */
+        height: 100%; /* 높이 자동으로 설정 */
+        max-width: 7%; /* 최대 너비 설정 */
+        margin-right: 63.125rem; /* 이미지 오른쪽 여백 설정 */
+    }
+
+    /* 말풍선 마름모 */
+    .custom-overlay-content {
+        padding: 4px;
+        background-color: #5f5f5f;
+        font-size: 0.75rem;
+        position: relative;
+        bottom: 3rem;
+        border: 1px solid #5f5f5f;
+        border-radius: 5px;
+        text-align: center; /* 텍스트 가운데 정렬 */
+        width: 100px; /* 너비 설정 */
+        z-index: 1; /* 삼각형이 표시될 수 있도록 z-index 설정 */
+        color: #fff;
+    }
+    .custom-overlay-content::after {
+        content: '';
+        position: absolute;
+        bottom: -10px; /* 오버레이 박스 아래에 위치하도록 설정 */
+        left: 50%; /* 가운데 위치 조정 */
+        transform: translateX(-50%); /* 가운데 정렬 */
+        width: 10px; /* 마름모의 너비 설정 */
+        height: 20px; /* 마름모의 높이 설정 */
+        background-color: #5f5f5f; /* 마름모의 배경색 설정 */
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* 마름모 모양 생성 */
+        z-index: -1;
+    }
+    /* 지도 끝 */
+
+    /* 하단 버튼 */
+    *, *:before, *:after {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .contact-last-bt {
+        display: inline-block;
+        padding: 0.6em 1.6em;
+        border-radius: 18px;
+        margin-top: 7rem;
+        margin-right: 0.7rem;
+        left: 29.7rem;
+        font-weight: bold;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: all 250ms ease;
+        top: -2.5rem;
+    }
+
+    .contact-last-bt:hover {
+        color: white;
+    }
+
+    .contact-last-bt:hover:after {
+        animation-name: contact-bgin;
+        transform: skew(-45deg) translate(-50%);
+    }
+
+    .contact-last-bt:after {
+        content: '';
+        z-index: -1;
+        width: 150%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        animation-name: contact-bgout;
+        animation-duration: 400ms;
+        transform: skew(-45deg) translate(-150%);
+    }
+
+    .contact-lastBt--pink {
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        transition: border-color 250ms ease;
+    }
+
+    .contact-lastBt--pink:after {
+        background-color: #ffffff;
+    }
+    .contact-lastBt--pink:hover {
+        color: red;
+        font-weight: bolder;
+    }
+
+
+    @keyframes contact-bgin {
+        from {
+            transform: skew(-45deg) translate(-150%);
+        }
+        to {
+            transform: skew(-45deg) translate(-50%);
+        }
+    }
+
+    @keyframes contact-bgout {
+        from {
+            transform: skew(-45deg) translate(-50%);
+        }
+        to {
+            transform: skew(-45deg) translate(50%);
+        }
+    }
+
+    .contact-bottom-last-container {
+        display: flex;
+        justify-content: flex-end; /* 버튼 오른쪽 정렬 */
+        position: relative;
+        margin-top: 2rem;
+    }
+
+    .contact-bottom-last-container::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 5.5rem;
+        height: 1px;
+        width: 85.5rem;
+        background: #595959
+    }
+
+    .contact-bottom-info-container {
+        color: #ffffff !important;
+        position: relative;
+        top: -4.6rem;
+        left: -26.4rem;
+    }
+    .contact-bottom-info2,
+    .contact-bottom-info3 {
+        font-family: 'Pretendard-Regular';
+        font-size: 0.8rem;
+    }
+
+    .contact-bottom-info-container p {
+        margin: 0;
+    }
+
+
+    /* 상단으로 가는 버튼 */
+    .top-button {
+        font-family: Pretendard-ExtraBold;
+        position: fixed;
+        width: 5.625rem;
+        height: 5.3125rem;
+        bottom: 3rem;
+        right: 3rem;
+        color: #1f1f1f;
+        border: 1px solid #595959;
+        border-radius: 50%;
+        padding: 0; /* 패딩 제거 */
+        background-color: rgba(255, 255, 255, 1);
+        cursor: pointer;
+        z-index: 1000; /* 다른 컨텐츠 위로 표시 */
+        text-decoration: none;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 0.625rem;
+        transition: all 0.6s ease; /* 호버 효과 전환 */
+    }
+    .top-button.active {
+        display: flex; /* active 클래스가 추가되면 버튼을 보이도록 설정 */
+    }
+    .top-button:hover {
+        background-color: #ff0000;
+        color: white !important;
+        border-color: red;
+    }
+    .top-button:hover::after {
+        content: '';
+        position: absolute;
+        width: 39px;
+        height: 1.5px;
+        background: white;
+        top: 63%;
+    }
+    .top-button:visited {
+        color: #1f1f1f;
+    }
+    /**/
+
+
+
+
+
+
+
+

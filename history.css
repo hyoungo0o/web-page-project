@@ -1,0 +1,719 @@
+/*
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-Bold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-ExtraBold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    body {
+        font-family: 'Pretendard-Regular', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #404040;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .history-body-overlay {
+        background: linear-gradient(0deg, #ffffff 11%, #363636 89.1%);
+        background-repeat: no-repeat;
+    }
+    .about {
+        font-family: "Pretendard-ExtraBold", sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        padding-top: 11rem
+    }
+
+    */
+/* 카테고리 *//*
+
+    .history-nav-links {
+        display: flex;
+        justify-content: center; */
+/* 수평 가운데 정렬 *//*
+
+        align-items: center; */
+/* 수직 가운데 정렬 *//*
+
+        flex-grow: 1; */
+/* 남은 공간을 채우도록 설정 *//*
+
+        position: relative;
+        margin-top: -4%;
+    }
+
+    */
+/* about *//*
+
+    .contact-container {
+        position: relative;
+        left: -20%;
+    }
+    .contact-company-img {
+        width: 100vw;
+        height: 23.625rem;
+        margin-bottom: 3rem;
+        margin-top: 2.5rem;
+    }
+
+    .contact-wrap {
+        padding-top: 1rem;
+    }
+
+    .contact-wrap-tap {
+        margin-right: 2rem;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+    }
+    .contact-wrap-tap::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.625rem;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: background-color 0.3s ease, width 0.3s ease;
+    }
+    .contact-wrap-tap.active,
+    .contact-wrap-tap:hover{
+        font-weight: bold;
+    }
+    .contact-wrap-tap.active::after,
+    .contact-wrap-tap:hover::after {
+        width: 100%; */
+/* 가로 길이 100% *//*
+
+        background-color: red; */
+/* 호버 시 색상 변경 *//*
+
+    }
+
+    .contact-blah {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .history-pause img {
+        position: relative;
+        left: 717px;
+        width: 65px;
+        height: auto;
+        top: 125px;
+        cursor: pointer;
+    }
+
+
+
+
+    a {
+      color: inherit;
+      box-sizing: border-box;
+    }
+
+
+    */
+/* INTRO SECTION
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+
+    .intro {
+      background: #f45b69;
+      padding: 100px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+
+    */
+/* TIMELINE
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+
+*/
+/*    .timeline ul {
+      background: #456990;
+      padding: 50px 0;
+    }*//*
+
+
+    .timeline-vir {
+        position: absolute;
+        width: 50%;
+        height: 29%;
+        background: #ffffff;
+        top: 94.5%;
+        border-radius: 50%;
+        left: 25rem;
+        filter: blur(216px);
+        opacity: 0.8;
+        z-index: -1;
+    }
+
+    section.timeline {
+        position: relative;
+        top: 15.5rem;
+        margin-bottom: 7rem;
+        transform: scale(1.2);
+    }
+
+    .timeline ul li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 50px;
+      background: #fff;
+    }
+
+    .timeline ul li::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: inherit;
+      z-index: 1;
+    }
+
+    .timeline ul li div {
+      position: relative;
+      bottom: 0;
+      width: 400px;
+      padding: 15px;
+      background: white;
+      filter: drop-shadow(2px 4px 0px #787878);
+    }
+
+    .timeline ul li div::before {
+      content: "";
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .timeline ul li:nth-child(odd) div {
+      left: 45px;
+    }
+
+    .timeline ul li:nth-child(odd) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .timeline ul li:nth-child(even) div {
+      left: -439px;
+    }
+
+    .timeline ul li:nth-child(even) div::before {
+      right: -15px;
+      border-width: 8px 0 8px 16px;
+      border-color: transparent transparent transparent white;
+    }
+
+    time {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        letter-spacing: 3px;
+    }
+
+
+    */
+/* EFFECTS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+
+    .timeline ul li::after {
+      transition: background 0.5s ease-in-out;
+    }
+
+    .timeline ul li.in-view::after {
+      background: #ff7c00;
+    }
+
+    .timeline ul li div {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .timeline ul li:nth-child(odd) div {
+      transform: translate3d(200px, 0, 0);
+    }
+
+    .timeline ul li:nth-child(even) div {
+      transform: translate3d(-200px, 0, 0);
+    }
+
+    .timeline ul li.in-view div {
+      line-height: 1.8;
+      transform: none;
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+    */
+/* GENERAL MEDIA QUERIES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+
+    @media screen and (max-width: 900px) {
+      .timeline ul li div {
+        width: 250px;
+      }
+      .timeline ul li:nth-child(even) div {
+        left: -289px;
+        */
+/*250+45-6*//*
+
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .timeline ul li {
+        margin-left: 20px;
+      }
+      .timeline ul li div {
+        width: calc(100vw - 91px);
+      }
+      .timeline ul li:nth-child(even) div {
+        left: 45px;
+      }
+      .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #ffffff transparent transparent;
+      }
+    }
+
+
+    */
+/* EXTRA/CLIP PATH STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+    .timeline-clippy ul li::after {
+      width: 40px;
+      height: 40px;
+      border-radius: 0;
+    }
+
+    .timeline-rhombus ul li::after {
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    .timeline-rhombus ul li div::before {
+      bottom: 12px;
+    }
+
+    .timeline-star ul li::after {
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+    }
+
+    .timeline-heptagon ul li::after {
+      clip-path: polygon(
+        50% 0%,
+        90% 20%,
+        100% 60%,
+        75% 100%,
+        25% 100%,
+        0% 60%,
+        10% 20%
+      );
+    }
+
+    .timeline-infinite ul li::after {
+      animation: scaleAnimation 2s infinite;
+    }
+
+    @keyframes scaleAnimation {
+      0% {
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.25);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+
+    */
+/* FOOTER STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– *//*
+
+    .page-footer {
+      position: fixed;
+      right: 0;
+      bottom: 20px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      color: black;
+      background: rgba(255, 255, 255, 0.65);
+      display: none;
+    }
+
+    .page-footer a {
+      display: flex;
+      margin-left: 4px;
+    }
+
+*/
+/*
+    *//*
+
+*/
+/* 히스토리 *//*
+*/
+/*
+
+    .history-box {
+        position: relative;
+        top: 50px;
+    }
+    *//*
+
+*/
+/* history1 *//*
+*/
+/*
+
+    .history-1-img {
+        width: 55rem;
+        height: 30rem;
+
+        margin-left: 0;
+        position: relative;
+        right: 19rem;
+        top: 4rem;
+        z-index: 1;
+    }
+
+    [data-termynal] {
+        width: 31.25rem !important;
+        height: 20rem !important;
+        max-width: 100%;
+        background: #232323; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        color: #eee; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 75px 45px 35px;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        top: -21rem;
+        left: 31rem;
+    }
+
+    [data-termynal]:before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        *//*
+
+*/
+/* A little hack to display the window buttons in one pseudo element. *//*
+*/
+/*
+
+        background: #d9515d;
+        -webkit-box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+                box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+    }
+
+    [data-ty] {
+        display: block;
+        position: relative;
+        top: -26px;
+        line-height: 1;
+        color: #fff; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+    }
+
+    .data-ty1 {
+        margin-top: 1rem;
+    }
+
+    [data-ty]:before {
+        *//*
+
+*/
+/* Set up defaults and ensure empty lines are displayed. *//*
+*/
+/*
+
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    [data-ty="input"]:before,
+    [data-ty-prompt]:before {
+        margin-right: 0.75em;
+        color: red;
+    }
+
+    [data-ty="input"]:before {
+        *//*
+
+*/
+/*content: '$';*//*
+*/
+/*
+
+    }
+
+    [data-ty][data-ty-prompt]:before {
+        content: attr(data-ty-prompt);
+    }
+
+    [data-ty-cursor]:after {
+        content: attr(data-ty-cursor);
+        font-family: monospace;
+        margin-left: 0.5em;
+        -webkit-animation: blink 1s infinite;
+                animation: blink 1s infinite;
+    }
+
+    @-webkit-keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    *//*
+
+*/
+/* history2 *//*
+*/
+/*
+
+    .history-2-img {
+        width: 55rem;
+        height: 30rem;
+
+        margin-left: 0;
+        position: relative;
+        left: 19rem;
+        top: -10rem;
+        z-index: 1;
+    }
+
+    [data-termynal2] {
+        width: 31.25rem !important;
+        height: 23rem !important;
+        max-width: 100%;
+        background: #232323; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        color: #eee; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 75px 45px 35px;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        top: -36rem;
+        right: 31rem;
+    }
+
+    [data-termynal2]:before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        *//*
+
+*/
+/* A little hack to display the window buttons in one pseudo element. *//*
+*/
+/*
+
+        background: #d9515d;
+        -webkit-box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+                box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+    }
+
+    .history-year2 {
+        margin-top: 1.1rem;
+    }
+    .data-ty2 {
+        margin-top: 1rem;
+    }
+
+    *//*
+
+*/
+/* history3 *//*
+*/
+/*
+
+    .history-3-img {
+        width: 55rem;
+        height: 30rem;
+        margin-left: 0;
+        position: relative;
+        right: 19rem;
+        top: -27rem;
+        margin-bottom: -55rem;
+        z-index: 1;
+    }
+
+    .history-year3 {
+        margin-top: 0.825rem;
+    }
+    .data-ty3 {
+        margin-top: 1rem;
+    }
+
+    [data-termynal3] {
+        width: 31.25rem !important;
+        height: 27rem !important;
+        max-width: 100%;
+        background: #232323; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        color: #eee; *//*
+
+*/
+/* 변경 가능 *//*
+*/
+/*
+
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 75px 45px 35px;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        top: -0.5rem;
+        left: 31rem;
+    }
+
+    [data-termynal3]:before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        *//*
+
+*/
+/* A little hack to display the window buttons in one pseudo element. *//*
+*/
+/*
+
+        background: #d9515d;
+        -webkit-box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+                box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+    }
+*//*
+
+
+
+.history-bottom-last-box {
+    position: relative;
+    top: 24rem;
+}
+
+
+
+
+*/

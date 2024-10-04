@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형에 꼭 써야함 -->
+    <title>hlsystem.com</title>
+    <link rel="stylesheet" href="/css/solutions-xdmp.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <link rel="stylesheet" href="/css/business.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e70fd007d1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/Flip.min.js"></script>
+</head>
+
+<body class="business-body-background">
+
+<div class="business-background-overlay"></div>
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="solutions-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+                        <!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+<!--                <li id="updates">-->
+<!--                    <a href="#/">UPDATES<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>-->
+<!--                    <div class="contact-dropdown contact-mainDropDown">-->
+<!--                        <p data-url="/hlsystem/updates/notice/">공지사항</p>-->
+<!--                        <p data-url="/hlsystem/updates/news">IT NEWS</p>-->
+<!--                    </div>-->
+<!--                </li>-->
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.contact-hl-top-fixed');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+</script>
+<!---->
+
+<div class="business-container">
+    <div class="business-main-img-box">
+        <div class="business-main-headline-box">
+            <h2 class="business-main-headline">Business</h2>
+            <span class="business-main-headline-sub">Our valued clients and partners</span>
+        </div>
+        <img class="business-main-img" src="/files/business-main-img.jpg">
+    </div>
+
+    <div class="scrolling-text-container" data-aos="fade-right">
+        <div class="business-credit-img"><img src="/files/business-credit-img.jpg"></div>
+        <div class="scrolling-text">
+            <div class="business-credits">LG CNS</div>
+            <div class="business-credits">현대해상</div>
+            <div class="business-credits">DGB생명</div>
+            <div class="business-credits">ABL생명</div>
+            <div class="business-credits">오렌지라이프</div>
+            <div class="business-credits">KB생명</div>
+            <div class="business-credits">아시아나 IDT</div>
+            <div class="business-credits">흥국생명</div>
+            <div class="business-credits">AIA</div>
+            <div class="business-credits">우정사업정보센터</div>
+            <div class="business-credits">현대라이프</div>
+            <div class="business-credits">한화생명</div>
+            <div class="business-credits">ace생명</div>
+            <div class="business-credits">코리안리 재보험</div>
+            <div class="business-credits">알리안츠</div>
+        </div>
+    </div>
+
+    <h2 class="business-credit-title" data-aos="fade-left">
+        H&L SYSTEM과 함께하는
+        <br><strong style="font-weight: bold;">소중한 파트너</strong>들입니다.
+    </h2>
+
+    <div class="business-list-container" data-aos="fade-up" data-aos-duration="500">
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/1. lg-cns.webp">
+            <p class="business-list business-list1"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/2. hyundai.webp">
+            <p class="business-list business-list5"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/3. dgb.gif">
+            <p class="business-list business-list2"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/4. abl.webp">
+            <p class="business-list business-list3"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/5. orangLife.webp">
+            <p class="business-list business-list4"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/6. kb.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/7. idt.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/8. heungkuk.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/9. aia.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/10. koreaPost.webp">
+            <p class="business-list business-list6"> </p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/11. hyundaiLife.webp">
+            <p class="business-list business-list6"> </p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/12. hanhwa.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/13. ace.webp">
+            <p class="business-list business-list6"> </p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/14. koreanRe.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+        <div class="business-wrap">
+            <img class="business-wrap-img" src="/files/business-list/15. allianz.webp">
+            <p class="business-list business-list6"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- business-main-headline-box 위치 이동 -->
+<script>
+    window.addEventListener('scroll', function() {
+        var headlineBox = document.querySelector('.business-main-headline-box');
+        var headScrollPosition = window.scrollY;
+
+        if (headScrollPosition > 20) {
+            headlineBox.classList.add('headlineShrink');
+        } else {
+            headlineBox.classList.remove('headlineShrink');
+        }
+    });
+</script>
+<!-- img resizing 이미지 리사이징 -->
+<script>
+    window.addEventListener('scroll', function() {
+        var businessMainImg = document.querySelector('.business-main-img');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 20) {
+            businessMainImg.classList.add('businessShrink');
+        } else {
+            businessMainImg.classList.remove('businessShrink');
+        }
+    });
+</script>
+
+<!-- ending credit -->
+<script src="/js/business-ending-credit.js"></script>
+
+<!-- business list 카드 -->
+<script src="/js/business-list-box.js"></script>
+
+
+<!-- 하단 -->
+<div class="business-bottom-last-box">
+    <div class="solutions-bottom-last-container">
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-contact" href="/hlsystem/about/contact" type="button">오시는길</a>
+    </div>
+
+    <div class="solutions-bottom-info-container">
+        <p class="solutions-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+        <p class="solutions-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+        <p class="solutions-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+    </div>
+</div>
+<!---->
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+    TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // 애니메이션 지속 시간 (1초)
+        offset: 200, // 트리거가 발생하는 위치 조정
+        once: true // 애니메이션이 한 번만 실행되도록 설정
+    });
+</script>
+
+</body>
+</html>

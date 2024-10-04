@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형에 꼭 써야함 -->
+    <title>hlsystem.com</title>
+    <link rel="stylesheet" href="/css/recruit_ideal_candidate.css">
+    <link rel="stylesheet" href="/css/solutions-xdmp.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/business.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e70fd007d1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/Flip.min.js"></script>
+</head>
+
+<body class="recruit-body-background">
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="solutions-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+                        <!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.contact-hl-top-fixed');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+</script>
+<!---->
+
+
+
+
+<div class="recruit-background-overlay-232323"></div>
+
+<div class="recruit-container">
+    <div class="recruit-headline-box">
+        <div class="recruit-background-overlay-orange">
+            <div class="sun"></div>
+            <div class="city-buildings">
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+                <div class="building"></div>
+            </div>
+        </div>
+        <div class="recruit-headline-box2">
+            <h2 class="recruit-headline">
+                Recruit
+            </h2>
+            <p class="recruit-headline-sub">
+                H&L SYSTEM과 함께
+                <br>미래를 만들어갈 인재를 찾습니다.
+            </p>
+
+            <div class="recruit-wrap">
+                <a href="/hlsystem/recruit/recruit_ideal_candidate" class="recruit-wrap-tap active">인재상</a>
+                <a href="/hlsystem/recruit/recruit_info" class="recruit-wrap-tap">채용정보</a>
+            </div>
+        </div>
+
+        <div class="recruit-ideal-candidate-container" data-aos="fade-up">
+            <div class="recruit_ideal_candidate-overlay"></div>
+            <div class="recruit-ideal-candidate-box1">
+                <i class="fa-solid fa-people-group recruit-fontawesome teamwork"></i>
+                <p class="recruit-ideal-candidate-title" data-aos="">
+                    Teamwork
+                </p>
+                <p class="recruit-ideal-candidate-sub">
+                    다양한 팀원들과 효과적으로
+                    <br>소통하고 협력하는 인재
+                </p>
+            </div>
+            <div class="recruit-ideal-candidate-box2">
+                <i class="fa-solid fa-clipboard-user recruit-fontawesome responsibility"></i>
+                <p class="recruit-ideal-candidate-title recruit-ideal-candidate-title-virtual1">
+                    Responsibility
+                </p>
+                <p class="recruit-ideal-candidate-sub">
+                    맡은 일에 대한 책임감을 가지고
+                    <br>완수하려는 자세를 가진 인재
+                </p>
+            </div>
+            <div class="recruit-ideal-candidate-box3">
+                <i class="fa-solid fa-hand-sparkles recruit-fontawesome creativity"></i>
+                <p class="recruit-ideal-candidate-title recruit-ideal-candidate-title-virtual2">
+                    Creativity
+                </p>
+                <p class="recruit-ideal-candidate-sub">
+                    기존 문제에 대해 새로운 해결책을
+                    <br>제시할 수 있는 창의적인 사고를 가진 인재
+                </p>
+            </div>
+            <div class="recruit-ideal-candidate-box4">
+                <i class="fa-solid fa-hand-holding-heart recruit-fontawesome positive-attitude"></i>
+                <p class="recruit-ideal-candidate-title">
+                    Positive attitude
+                </p>
+                <p class="recruit-ideal-candidate-sub">
+                    도전과 변화에 대해
+                    <br>긍정적이고 유연한 태도의 인재
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="recruit-apply" id="openModalBtn">온라인 입사 지원</button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" title="창 닫기">&times;</span>
+            <form id="applicationForm" action="http://localhost:8001/send_email.php" method="POST" enctype="multipart/form-data" onsubmit="return checkFiles();">
+                <div class="apply-container">
+                    <div class="apply-select-box">
+                        지원분야
+                        <select name="area" class="apply-select" required>
+                            <option value="">지원분야</option>
+                            <option>Sales</option>
+                            <option>Development</option>
+                            <option>Cloud</option>
+                        </select>
+                    </div>
+                    <div class="apply-name-email-box">
+                        <div class="apply-box">
+                            이름
+                            <input type="text" name="name" class="apply-input" required>
+                        </div>
+                        <div class="apply-box">
+                            이메일
+                            <input type="email" name="mail" class="apply-input" required>
+                        </div>
+                    </div>
+
+                    <div class="apply-box">
+                        전화번호
+                        <input type="tel" class="apply-input" name="mobile" title="'-' 포함하여 입력하세요." required placeholder="Ex) 010-1234-1234">
+                    </div>
+
+                    <div class="apply-box2 box2-important">
+                        이력서
+                        <input type="file" class="apply-file-input" id="resume" name="resume" style="display: none;" required onchange="updateFileName('resume', this)">
+                        <button type="button" class="apply-file-bt" onclick="document.getElementById('resume').click();">
+                            <i class="fa-solid fa-circle-check apply-file-title">&nbsp;&nbsp;파일 선택</i>
+                        </button>
+                        <span id="resume-file-name" class="file-name-display"></span>
+                    </div>
+
+                    <div class="apply-box2">
+                        자기소개서
+                        <input type="file" class="apply-file-input" id="coverLetter" name="coverLetter" style="display: none;" onchange="updateFileName('coverLetter', this)">
+                        <button type="button" class="apply-file-bt" onclick="document.getElementById('coverLetter').click();">
+                            <i class="fa-solid fa-circle-check apply-file-title">&nbsp;&nbsp;파일 선택</i>
+                        </button>
+                        <span id="coverLetter-file-name" class="file-name-display"></span>
+                    </div>
+
+                    <div class="apply-box2">
+                        포트폴리오
+                        <input type="file" class="apply-file-input" id="portfolio" name="portfolio" style="display: none;" onchange="updateFileName('portfolio', this)">
+                        <button type="button" class="apply-file-bt" onclick="document.getElementById('portfolio').click();">
+                            <i class="fa-solid fa-circle-check apply-file-title">&nbsp;&nbsp;파일 선택</i>
+                        </button>
+                        <span id="portfolio-file-name" class="file-name-display"></span>
+                    </div>
+
+                    <div id="resultMessage"></div>
+                    <button type="submit" class="apply-submit">
+                        이력서 제출
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 파일 이름 업데이트 함수
+    function updateFileName(inputId, inputElement) {
+        const fileName = inputElement.files[0] ? inputElement.files[0].name : '파일 선택';
+        document.getElementById(`${inputId}-file-name`).textContent = fileName; // 파일 이름 업데이트
+    }
+
+    // 폼 제출 처리
+    document.getElementById('applicationForm').onsubmit = function(event) {
+        event.preventDefault(); // 기본 제출 방지
+
+        if (!checkFiles()) {
+            return; // 파일 체크 실패 시 제출 방지
+        }
+
+        var formData = new FormData(this);
+
+        fetch('http://localhost:8001/send_email.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message); // 알림창으로 메시지 표시
+            if (data.message === '이메일이 성공적으로 전송되었습니다.') {
+                modal.style.display = "none"; // 모달 닫기
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('이메일 전송 중 오류가 발생했습니다.'); // 오류 발생 시 알림창 표시
+        });
+    };
+
+    // 파일 입력에 대한 이벤트 리스너
+    document.querySelectorAll('.apply-file-input').forEach(input => {
+        input.addEventListener('change', function () {
+            updateFileName(input.id, this); // 파일 이름 업데이트 호출
+        });
+    });
+
+    // 파일 체크 함수
+    function checkFiles() {
+        var resume = document.getElementById('resume').value;
+        if (!resume) {
+            alert('이력서 파일 선택은 필수입니다.');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+
+
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/recruit-active.js"></script>
+
+<!-- img resizing 이미지 리사이징 -->
+<script>
+    window.addEventListener('scroll', function() {
+        var recruitMainImg = document.querySelector('.recruit-background-overlay-orange');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+            recruitMainImg.classList.add('recruitShrink');
+        } else {
+            recruitMainImg.classList.remove('recruitShrink');
+        }
+    });
+</script>
+
+<script>
+    // DOM 요소 선택
+const modal = document.getElementById("myModal");
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModalBtn = document.getElementsByClassName("close")[0];
+
+// 버튼 클릭 시 모달 열기
+openModalBtn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// 닫기 버튼 클릭 시 모달 닫기
+closeModalBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// 모달 바깥을 클릭하면 모달 닫기
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!-- 하단 -->
+<div class="recruit-bottom-last-box">
+    <div class="solutions-bottom-last-container">
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-contact" href="/hlsystem/about/contact" type="button">오시는길</a>
+    </div>
+
+    <div class="solutions-bottom-info-container">
+        <p class="solutions-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+        <p class="solutions-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+        <p class="solutions-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+    </div>
+</div>
+<!---->
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+    TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // 애니메이션 지속 시간 (1초)
+        offset: 200, // 트리거가 발생하는 위치 조정
+<!--        once: true // 애니메이션이 한 번만 실행되도록 설정-->
+    });
+</script>
+
+</body>
+</html>

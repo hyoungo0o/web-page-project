@@ -1,0 +1,106 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.last-bt {
+    display: inline-block;
+    padding: 0.6em 1.6em;
+    border-radius: 18px;
+    margin-top: 7rem;
+    margin-right: 0.7rem;
+    left: 29.7rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 250ms ease;
+    top: -2.5rem;
+}
+
+.last-bt:hover {
+    color: white;
+}
+
+.last-bt:hover:after {
+    animation-name: bgin;
+    transform: skew(-45deg) translate(-50%);
+}
+
+.last-bt:after {
+    content: '';
+    z-index: -1;
+    width: 150%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    animation-name: bgout;
+    animation-duration: 400ms;
+    transform: skew(-45deg) translate(-150%);
+}
+
+.lastBt--pink {
+    border: 2px solid #595959;
+    /*color: #ffffff;*/
+    transition: border-color 250ms ease;
+}
+
+.lastBt--pink:after {
+    background-color: #D2A3A2;
+}
+
+
+@keyframes bgin {
+    from {
+        transform: skew(-45deg) translate(-150%);
+    }
+    to {
+        transform: skew(-45deg) translate(-50%);
+    }
+}
+
+@keyframes bgout {
+    from {
+        transform: skew(-45deg) translate(-50%);
+    }
+    to {
+        transform: skew(-45deg) translate(50%);
+    }
+}
+
+    .main-bottom-last-container {
+        display: flex;
+        justify-content: flex-end; /* 버튼 오른쪽 정렬 */
+        position: relative;
+        margin-top: 2rem;
+    }
+
+    .main-bottom-last-container::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 5.5rem;
+        height: 1px;
+        width: 85.5rem;
+        background: #595959
+    }
+
+    .main-bottom-info-container {
+        /*color: #ffffff !important;*/
+        position: relative;
+        top: -4.6rem;
+        left: -26.4rem;
+    }
+    .main-bottom-info2,
+    .main-bottom-info3 {
+        font-family: 'Pretendard-Regular';
+        font-size: 0.8rem;
+    }
+

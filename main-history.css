@@ -1,0 +1,69 @@
+    /* HISTORY */
+    .history-title {
+        padding-top: 120px;
+    }
+    .history-margin {
+        margin-top: -5px;
+    }
+    .history-container {
+        align-content: center;
+        text-align: center;
+        /*color: #ffffff;*/
+    }
+    .history-date {
+        font-family: 'Pretendard-Bold';
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .history-content {
+        font-family: 'Pretendard-Regular';
+        font-size: 16px;
+    }
+    .history-dot {
+        font-family: 'Pretendard-ExtraBold';
+        font-size: 30px;
+    }
+    .history-dot {
+        margin-top: -10px;
+    }
+    .history-dot p {
+        margin: 0;
+    }
+    .history-item {
+        border: 1.5px solid #cccccc;
+        padding: 30px !important;
+        margin-bottom: 25px;
+        width: 450px;
+        height: auto;
+        background: linear-gradient(to bottom right, #ffffff, #ffffff, #ffffff); /* 초기 배경색 */
+        transition: background 0.6s ease; /* 전환 효과 설정 */
+    }
+
+    /* 버튼 애니메이션 요소들 */
+    :root {
+      --button-height: 60px;
+    }
+    .main-history-button {
+      background: 4px solid white;
+      border: none;
+      display: inline-block;
+      height: var(--button-height);
+      overflow: hidden;
+      padding: 0 20px;
+      position: relative;
+      width: 140px;
+      max-width: 140px;
+    }
+
+    .main-history-button,
+    .main-history-svg {
+      margin-top: 31px;
+      cursor: pointer;
+      font-family: 'Pretendard-Bold';
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+    .allHistory:visited {
+        text-decoration: none;
+        /*color: #ffffff;*/
+    }

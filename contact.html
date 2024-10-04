@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hlsystem.com</title>
+    <!-- Kakao Maps JavaScript -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=da471f1491ac6ec0dd8bbd4f25758e7d"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/solutions-etc.css">
+    <link rel="stylesheet" href="/css/solutions-sqle.css">
+    <link rel="stylesheet" href="/css/solutions-xdmp.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+<body class="contact-body-background">
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="contact-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+                        <!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+<!--                <li><a href="/hlsystem/contact">CONTACT</a></li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.contact-hl-top-fixed');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+</script>
+<!---->
+
+
+<!-- 오시는길 Contact 시작 -->
+<div class="contact-overlay"></div>
+<div class="contact-container">
+    <h3 class="about">About Us</h3>
+    <div class="contact-wrap">
+        <a href="/hlsystem/about/introduce" class="contact-wrap-tap">회사소개</a>
+        <a href="/hlsystem/about/ceo" class="contact-wrap-tap">CEO</a>
+        <a href="/hlsystem/about/history" class="contact-wrap-tap">History</a>
+        <a href="/hlsystem/about/contact" class="contact-wrap-tap active">오시는길</a>
+    </div>
+</div>
+<img class="contact-company-img" src="/files/contact-company.jpg" alt="" data-aos="fade-up">
+<!-- img resizing 이미지 리사이징 -->
+<script>
+    window.addEventListener('scroll', function() {
+        var img = document.querySelector('.contact-company-img');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+            img.classList.add('shrink');
+        } else {
+            img.classList.remove('shrink');
+        }
+    });
+</script>
+
+<p class="contact-blah" data-aos="fade-up">오시는 길</p>
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/contact-active.js"></script>
+
+
+<!-- 지도 -->
+<div class="contact-contactContainer" data-aos="fade-up" data-aos-delay="200">
+    <div id="contactMap" class="contact-mapContainer"></div>
+    <!-- 길찾기 및 로드뷰 링크 -->
+    <div class="map-links">
+        <img class="contact-kakao-img" src="/files/kakaomap_horizontal_en.png">
+        <a id="findLoadLink" href="#">길찾기</a>
+        <p class="find-dash">&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+        <a id="roadViewLink" href="#">로드뷰</a>
+    </div>
+    <!-- 주소 정보 -->
+    <div class="contact-addressInfo">
+        <div class="contact-addressDetail" style="font-family: 'Pretendard-Regular'; margin-top: 5px;">
+            <p><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;서울특별시 중구 새문안로 22 6F (04516)</p>
+            <p><i class="fas fa-subway"></i>&nbsp;&nbsp;서대문역 5번출구</p>
+            <p> <!-- 번호 앱 연동 -->
+                <a class="contact-tel" href="tel:027395161">
+                    <i class="fas fa-phone-alt"></i>&nbsp;&nbsp;TEL : 02)739-5161~2
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- 지도 스크립트 -->
+<script src="/js/contact-map.js"></script>
+
+<!-- 지도 끝 -->
+
+
+<!-- 하단 -->
+<div class="solutions-bottom-last-box">
+    <div class="solutions-bottom-last-container">
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-contact" href="/hlsystem/about/contact" type="button">오시는길</a>
+    </div>
+
+    <div class="solutions-bottom-info-container">
+        <p class="solutions-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+        <p class="solutions-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+        <p class="solutions-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+    </div>
+</div>
+<!---->
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+    TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // AOS 초기화
+    AOS.init({
+        duration: 1000, // 애니메이션 지속 시간 (1초)
+        offset: 200, // 트리거가 발생하는 위치 조정
+    });
+</script>
+
+</body>
+</html>

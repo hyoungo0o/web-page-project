@@ -1,0 +1,388 @@
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-Bold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Pretendard-ExtraBold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    body {
+        font-family: 'Pretendard-Regular', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*background-color: #404040;*/
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .main-background-overlay {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #2c2c2c;
+        z-index: -1; /* 콘텐츠 뒤에 배치 */
+    }
+
+    h1 {
+        font-family: "Pretendard-ExtraBold", sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    h1, .newsTitle, .siteName, .newsDate {
+        /*color: #ffffff;*/
+        padding: 10px;
+    }
+
+    /*상단*/
+    /* 프로그레스바 스타일 */
+    .scroll-progress {
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 0.375rem;
+        width: 0%;
+        background-color: #D2A3A2;
+        z-index: 100;
+        transition: width 0.3s ease; /* 너비 변화에 애니메이션 적용 */
+    }
+    .hl-top-fixed {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* 수직 중앙 정렬 */
+        justify-content: center; /* 전체 아이템을 중앙에 정렬 */
+        position: fixed;
+        top: 0;
+        padding: 1.5rem;
+        z-index: 100;
+        transition: top 0.3s ease; /* top 속성에 변화가 있을 때 애니메이션 적용 */
+        box-sizing: border-box;
+    }
+    .hl-top-fixed.active {
+        top: 0;
+        background-color: #404040;
+        border-bottom: 1px solid #595959;
+        position: fixed;
+    }
+    .company-logo {
+        position: relative;
+        width: 13.75rem;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        top: 0.5rem
+    }
+
+    /* 카테고리 */
+    .nav-links {
+        display: flex;
+        justify-content: center; /* 수평 가운데 정렬 */
+        align-items: center; /* 수직 가운데 정렬 */
+        flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+        position: relative;
+        /*margin-left: 300px;*/
+        margin-top: -4%;
+    }
+    #nav-1 {
+        position: relative;
+        border: none;
+        border-radius: 10em;
+        display: flex;
+        list-style: none;
+        padding: 10px;
+        margin-left: 300px; /* 기존 .nav-links의 margin-left 값을 적용 */
+        flex-grow: 1; /* 기존 .nav-links의 flex-grow 값을 적용 */
+    }
+
+    #nav-1 li {
+        margin: 0;
+        position: relative;
+    }
+
+    #nav-1 li a {
+        padding: 0.6em 2em;
+        top: 0.15rem;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+    }
+
+    #nav-1 .slide1,
+    #nav-1 .slide2 {
+        position: absolute;
+        display: inline-block;
+        height: 3em;
+        border-radius: 10em; /* 둥근 모서리 설정 */
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+    }
+
+    #nav-1 .slide1 {
+        background-color: #D2A3A2;
+        z-index: 2;
+        border-radius: 10em; /* 추가된 둥근 모서리 설정 */
+    }
+
+    #nav-1 .slide2 {
+        opacity: 0;
+        background: #595959;
+        z-index: 1;
+        border-radius: 10em; /* 추가된 둥근 모서리 설정 */
+    }
+
+    #nav-1 .squeeze {
+        transform: scale(0.9);
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .nav-arrow {
+         position: relative;
+         right: -0.5rem;
+     }
+
+        /* 드롭다운 */
+    .mainDropDown {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        background: #595959;
+        position: relative;
+        z-index: 200; /* 네비게이션 바 위로 나타나도록 설정 */
+        border-radius: 4px;
+        box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease; /* 애니메이션 효과 설정 */
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        left: 0 !important;
+    }
+    .hl-top-fixed .mainDropDown::before {
+        content: '';
+        position: absolute;
+        top: -0.59375rem;
+        left: calc(50% - 10px);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #595959;
+        z-index: 201;
+    }
+
+    .hl-top-fixed .mainDropDown.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 10px; /* 필요한 만큼 조정 */
+    }
+
+    .hl-top-fixed .mainDropDown p {
+        color: #fff;
+        padding: 10px 18px;
+        /*margin: 4px 0;*/
+        cursor: pointer;
+        box-sizing: border-box; /* 패딩을 포함한 전체 크기 설정 */
+    }
+
+    .hl-top-fixed .mainDropDown p:hover {
+        background-color: rgba(210, 163, 162, 0.7);
+        border-radius: 4px;
+    }
+
+    /* 메인 이미지 */
+    .main-img {
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity 3s ease, transform 3s ease;
+        transform-origin: center;
+        transform: scale(1.4);
+    }
+    .main-img.active {
+        display: block;
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    .main-animation {
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 바 애니메이션 */
+    .animation-bars {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+    }
+    .animation-bar {
+        width: 150px;
+        height: 6px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        overflow: hidden;
+        border-radius: 16px;
+        margin-right: 10px;
+    }
+    .fill-bar {
+        width: 0;
+        height: 100%;
+        background-color: #D2A3A2;
+    }
+    .space1-bar .fill-bar {
+        animation: fillBarColor1 3s linear;
+    }
+    .space2-bar .fill-bar {
+        animation: fillBarColor2 3s linear;
+        animation-delay: 3s;
+    }
+    .outsourcing-bar .fill-bar {
+        animation: fillBarColor3 3s linear;
+        animation-delay: 6s;
+    }
+    @keyframes fillBarColor1 {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    @keyframes fillBarColor2 {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    @keyframes fillBarColor3 {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    /* 애니메이션 끝 */
+
+    .animation-title, .animation-content {
+        position: absolute;
+        color: #ffffff;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .animation-title.active, .animation-content.active {
+        opacity: 1;
+    }
+
+    .animation-title:first-child, .animation-content:first-child {
+        z-index: 2;
+    }
+    .animation-title {
+        font-size: 3rem;
+        font-family: Pretendard-Bold;
+        top: 15.25rem;
+        left: 21rem
+    }
+    .animation-title::after {
+        content: '';
+        position: absolute;
+        bottom: -2.8125rem;
+        left: 0;
+        width: 31.25rem;
+        height: 1px;
+        background-color: #404040;
+    }
+    .animation-content {
+        font-size: 1.25rem;
+        font-family: Pretendard-Regular;
+        top: 19.5rem;
+        left: 21rem;
+    }
+
+    .introduce-more {
+        position: absolute;
+        font-size: 1rem;
+        font-family: Pretendard-Regular;
+        top: 21.9375rem;
+        left: 44.75rem;
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 1s ease;
+        overflow: hidden;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+    .introduce-more:hover {
+        color: #D2A3A2;
+        text-decoration: underline;
+        font-family: Pretendard-bold;
+    }
+    .introduce-more:visited {
+        color: #ffffff;
+    }
+    /**/
+
+    /* 상단으로 가는 버튼 */
+    .top-button {
+        font-family: Pretendard-ExtraBold;
+        position: fixed;
+        width: 5.625rem;
+        height: 5.3125rem;
+        bottom: 3rem;
+        right: 3rem;
+        color: #1f1f1f;
+        border: 1px solid #595959;
+        border-radius: 50%;
+        padding: 0; /* 패딩 제거 */
+        background-color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        z-index: 1000; /* 다른 컨텐츠 위로 표시 */
+        text-decoration: none;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 0.625rem;
+        transition: background-color 0.6s ease; /* 호버 효과 전환 */
+    }
+    .top-button.active {
+        display: flex; /* active 클래스가 추가되면 버튼을 보이도록 설정 */
+    }
+    .top-button:hover {
+        background-color: #d2a3a2; /* 호버시 배경색 변경 */
+    }
+    .top-button:visited {
+        color: #1f1f1f;
+    }
+    /**/

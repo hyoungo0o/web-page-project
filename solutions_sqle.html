@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형에 꼭 써야함 -->
+    <title>hlsystem.com</title>
+    <link rel="stylesheet" href="/css/solutions-xdmp.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <link rel="stylesheet" href="/css/solutions-sqle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e70fd007d1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body class="sqle-body-background">
+
+<div class="solutions-background-overlay"></div>
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="solutions-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+<!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.contact-hl-top-fixed');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+</script>
+<!---->
+
+<div class="solutions-container">
+    <h3 class="solutions">Solutions</h3>
+    <p class="solutions-sub btn-shine">Ask how <strong>&nbsp;H&L SYSTEM&nbsp;</strong> can drive business value for your company</p>
+    <div class="solutions-wrap">
+        <a href="/hlsystem/solutions/solutions_xdmp" class="solutions-wrap-tap">XDMP</a>
+        <a href="/hlsystem/solutions/solutions_sqle" class="solutions-wrap-tap active">SQLe</a>
+<!--        <a href="/hlsystem/solutions/solutions_insurance" class="solutions-wrap-tap">Banka Insulance</a>-->
+<!--        <a href="/hlsystem/solutions/solutions_cloud" class="solutions-wrap-tap">Cloud</a>-->
+        <a href="/hlsystem/solutions/solutions_etc" class="solutions-wrap-tap">Etc</a>
+    </div>
+</div>
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/solutions-active.js"></script>
+
+<div class="solutions-sqle-box">
+    <div class="sqle-background-overlay">
+        <div class="sqle-headline-container">
+            <img src="/files/solutions-sqle-logo.png" data-aos="fade-up">
+<!--            <h2 class="sqle-headline" data-aos="fade-up">-->
+<!--                SQLe-->
+<!--            </h2>-->
+<!--            <span class="sqle-headline-sub" data-aos="fade-up" data-aos-delay="100">-->
+<!--                SQL 품질 관리 플랫폼-->
+<!--            </span>-->
+        </div>
+        <img src="/files/solutions-sqle-img1.png" data-aos="fade-up" data-aos-delay="140">
+        <img src="/files/solutions-sqle-img2.png" data-aos="fade-up" data-aos-delay="160">
+        <img class="sqle-img3-margin-top-bottom" src="/files/solutions-sqle-img3.png" data-aos="fade-up" data-aos-delay="170">
+        <img class="sqle-img4-margin-bottom" src="/files/solutions-sqle-img4.png" data-aos="fade-up" data-aos-delay="180">
+        <img src="/files/solutions-sqle-img5.png" data-aos="fade-up" data-aos-delay="190">
+        <img src="/files/solutions-sqle-img6.png" data-aos="fade-up" data-aos-delay="200">
+        <div class="sqle-img-arrow">
+            <img src="/files/solutions-sqle-img-arrow.png" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
+        </div>
+    </div>
+</div>
+
+<div class="solutions-sqle-multiDb-auditing-box">
+    <div class="sqle-multiDb-auditing-background-overlay">
+        <div class="sqle-multiDb-auditing-headline-container">
+            <h2 class="sqle-multiDb-auditing-headline" data-aos="fade-up">
+                SQLe Multi-database Auditing Platform
+            </h2>
+            <span class="sqle-multiDb-auditing-headline-sub" data-aos="fade-up" data-aos-delay="100">
+                SQLe 다중 데이터베이스 감사 플랫폼
+            </span>
+        </div>
+            <div class="sqle-auditing-container">
+                <div class="sqle-auditing-imgBox1">
+                    <img class="sqle-auditing-img1" src="/files/solutions-sqle-Multi-database-Auditing-Platform-img1.png" data-aos="fade-right" data-aos-delay="140">
+                </div>
+                <div class="sqle-auditing-imgBox2">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img2.png" data-aos="fade-up" data-aos-delay="160">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img3.png" data-aos="fade-up" data-aos-delay="170">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img4.png" data-aos="fade-up" data-aos-delay="180">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img5.png" data-aos="fade-up" data-aos-delay="190">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img6.png" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/files/solutions-sqle-Multi-database-Auditing-Platform-img7.png" data-aos="fade-up" data-aos-delay="210">
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+    TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+
+<!-- 하단 -->
+<div class="sqle-bottom-last-box">
+    <div class="solutions-bottom-last-container">
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+        <a class="solutions-last-bt solutions-lastBt--pink solutions-lastBt-contact" href="/hlsystem/about/contact/" type="button">오시는길</a>
+    </div>
+
+    <div class="solutions-bottom-info-container">
+        <p class="solutions-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+        <p class="solutions-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+        <p class="solutions-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+    </div>
+</div>
+<!---->
+
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true
+    });
+</script>
+
+</body>

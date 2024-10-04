@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형에 꼭 써야함 -->
+    <title>hlsystem.com</title>
+    <link rel="stylesheet" href="/css/introduce.css">
+    <link rel="stylesheet" href="/css/introduce-content3-text.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/introduce-main.css">
+    <link rel="stylesheet" href="/css/introduce-solutions.css">
+    <link rel="stylesheet" href="/css/introduce-wheel2.css">
+    <link rel="stylesheet" href="/css/introduce-news.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.x/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+</head>
+<body>
+
+<div class="introduce-background-overlay"></div>
+<div class="introduce-background-overlay-news"></div>
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="introduce-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    var lastScrollTop = 0;
+    var header = document.querySelector('.contact-hl-top-fixed');
+    var ticking = false;
+    var scrollTimeout;
+
+    function handleScroll() {
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > lastScrollTop) {
+            // 스크롤을 아래로 내릴 때
+            header.classList.remove('active');
+        } else {
+            // 스크롤을 위로 올릴 때
+            if (scrollPosition > 0) {
+                header.classList.add('active');
+            } else {
+                header.classList.remove('active');
+            }
+        }
+
+        lastScrollTop = scrollPosition;
+        ticking = false;
+    }
+
+    function debounceScroll() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            handleScroll();
+        }, 200); // 200ms의 딜레이로 debounce 적용
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(debounceScroll);
+            ticking = true;
+        }
+    });
+
+    // 클릭 이벤트 핸들러 추가
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+
+</script>
+
+
+
+<!---->
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/contact-active.js"></script>
+
+<!-- introduce 시작 -->
+<div>
+    <div class="introduce-wheel introduce-main">
+        <div class="changing-title2"><h1>Driving</h1>
+<!--            <span class="waving-hand">👋</span>-->
+        </div>
+        <div class="changing-ending"><strong class="underline--magical2">
+            <span class="changing-ending-scale">D</span>riving
+            <span class="changing-ending-scale">D</span>igital
+            <span class="changing-ending-scale">I</span>nnovation</strong>
+            <span class="changing-ending-sub">
+                <span class="changing-ending-sub-typing" id="changing-ending-sub-typing"></span>
+                <span id="changing-ending-sub-cursor" class="changing-ending-sub-cursor">|</span>
+            </span>
+        </div>
+        <div class="introduce-main-scroll">
+            Scroll
+            <img src="/files/introduce-scroll-arrow.png" alt="">
+        </div>
+    </div>
+
+    <div class="introduce-wheel introduce-wheel1-2">
+        <div class="wheel1-2-container">
+            <div class="wheel1-2-img" data-aos="fade-right" data-aos-duration="1000">
+                <img src="/files/introduce-4.jpg" alt="">
+            </div>
+            <p class="introduce-content1-2" data-aos="fade-left" data-aos-duration="1000">
+                당신의 비즈니스 성공을 위한
+                <br><strong class="content-1-2-highlight">솔루션 전문회사</strong>가 필요하신가요?
+                <br><span class="content1-2-sub1"><span>금융 </span>분야에서의 전문 지식으로</span>
+                <br><span class="content1-2-sub2">최적의 솔루션을 제공해 드립니다.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 3번째 화면  -->
+    <div class="introduce-wheel introduce-wheel3-2">
+        <p class="introduce-solutions-title" data-aos="fade-up">
+            업무 혁신의 미래를 여는
+            <br><strong>전문 설계 솔루션</strong>
+        </p>
+        <div class="introduce-sol-slider" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="introduce-sol-sliders">
+                <div class="introduce-sol-slide sol-xdmp">
+                    <img class="solutions-img solutions-img-4set" src="/files/so-dmp.jpg" alt="">
+                    <a href="/hlsystem/solutions/solutions_xdmp" class="introduce-sol-listTitle" title="XDMP 페이지로 이동">
+                        XDMP
+                    </a>
+                </div>
+                <div class="introduce-sol-slide sol-sqle">
+                    <img class="solutions-img solutions-img-3set" src="/files/so-cloud.jpg" alt="">
+                    <a href="/hlsystem/solutions/solutions_sqle" class="introduce-sol-listTitle" title="SQLe 페이지로 이동">
+                        SQLe
+                    </a>
+                </div>
+                <div class="introduce-sol-slide sol-etc">
+                    <img class="solutions-img solutions-img-3set sol-etc-img" src="/files/so-insurance.jpg" alt="">
+                    <a href="/hlsystem/solutions/solutions_etc" class="introduce-sol-listTitle" title="Etc 페이지로 이동">
+                        Etc
+                    </a>
+                </div>
+            </div>
+            <div class="introduce-sol-slideDot">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="introduce-wheel2-content-container" data-aos="fade-right" data-aos-duration="800">
+            <h1 class="introduce-wheel2-content">
+                기술의 미래를 함께 만들어가는
+                <br>IT 혁신의 선도자
+            </h1>
+            <hr class="introduce-wheel2-content-solid">
+            <p class="introduce-wheel2-content-p">Leading the way in IT innovation, shaping the future of technology together.</p>
+        </div>
+
+        <div class="swiper introduce-wheel" data-aos="fade-left" data-aos-duration="800">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide--one">
+                    <div>
+                        <h2>System Integration</h2>
+                        <p>
+                            - 맞춤형 시스템 개발
+                            <br>- 패키지 소프트웨어 기반 시스템 개발
+                            <br>- S/W, H/W 장비 판매 및 설치 통합관리
+                            <br>- 시스템 관리, 운영 및 유지보수
+                            <br>- Web, HOST</p>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide--two">
+                    <div>
+                        <h2>Cloud(AWS, GCP)</h2>
+                        <p>
+                            - 체계적인 설계 구축 지원
+                            <br>- 신속한 클라우드 마이그레이션
+                            <br>- 안정적인 클라우드 운영 관리
+                            <br>- 즉각적인 시스템 장애 대응
+                        </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--three">
+
+                    <div>
+                        <h2>Consulting</h2>
+                        <p>
+                            - 보험 업무 프로세스 개선 컬설팅
+                            <br>- 정보화 컨설팅
+                            <br>- 솔루션 컨설팅
+                            <br>- e-Business 컨설팅
+                        </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--four">
+
+                    <div>
+                        <h2>Solution</h2>
+                        <p>
+                            - XDMP
+                            <br>- SQLE
+                            <br>- Banka Insulance
+                        </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--five">
+
+                    <div>
+                        <h2>ITO Outsourcing</h2>
+                        <p>
+                            - Application 아웃소싱
+                        </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--six">
+
+                    <div>
+                        <h2>Energy</h2>
+                        <p>
+                            - 태양광 모니터링 솔루션 (H-SMS)
+                            <br>- Energy saving system
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+<!--            <div class="swiper-pagination"></div>-->
+            <div class="introduce-swipe"><img src="/files/introduce-swipe-arrow.png" alt="">&nbsp;Swipe</div>
+        </div>
+    </main>
+
+    <!-- 5번째 화면  -->
+    <div class="introduce-wheel introduce-wheel5">
+        <div class="introduce-news-titleContainer">
+            <p class="introduce-news-title" data-aos="fade-right" data-aos-duration="1000">
+                IT NEWS
+            </p>
+            <p class="introduce-news-subTitle" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                : IT 산업의 변화를 이끄는 최신 뉴스를 전해드립니다.
+            </p>
+
+            <div class="introduceNewsContainer" data-aos="fade-left">
+                <div class="introduceMainNews" th:if="${newsItems != null and newsItems.size() > 0}">
+                    <a th:href="@{${newsItems[0].link}}" target="_blank">
+                        <img th:src="@{https://i.pinimg.com/564x/72/6d/54/726d54d191ffb6cd09bf26430f19c427.jpg}" alt="Main News Image">
+                    </a>
+                    <div class="introduceNewsDetails">
+                        <a th:href="@{${newsItems[0].link}}" class="introduceNewsTitle"
+                           style="font-size: 20px; font-weight: bold; text-decoration: none; display: block;" target="_blank">
+                            <span th:utext="${newsItems[0]?.title?.lastIndexOf(' - ') != -1 ? newsItems[0]?.title?.substring(0, newsItems[0]?.title?.lastIndexOf(' - ')) : newsItems[0]?.title}">기사 타이틀</span>
+                        </a>
+                        <div class="introduceSiteName introduceMainSiteName" th:if="${newsItems[0] != null}"
+                             th:text="${newsItems[0].title != null && newsItems[0].title.lastIndexOf(' - ') != -1 ? newsItems[0].title.substring(newsItems[0].title.lastIndexOf(' - ') + 3) : 'Click on the title to visit the news website.'}"
+                             style="font-size: 14px;">뉴스 사이트명</div>
+                        <div class="introduceNewsDate" th:text="${newsItems[0]?.pubDate}"
+                             style="font-size: 12px;">기사 날짜</div>
+                    </div>
+                </div>
+                <div class="introduceSideNews">
+                    <div class="introduceNewsItem" th:each="item, itemStat : ${newsItems}" th:if="${itemStat.index > 0 and itemStat.index < 4}">
+                        <a th:href="@{${item.link}}" target="_blank">
+                            <img th:src="@{https://i.pinimg.com/564x/8e/61/a2/8e61a2f83c506167351228e349678734.jpg}" alt="News Image">
+                        </a>
+                        <div class="introduceNewsDetails">
+                            <a th:href="@{${item.link}}" class="newsTitle"
+                               style="font-size: 20px; font-weight: bold; text-decoration: none; display: block;" target="_blank">
+                                <span th:utext="${item?.title?.lastIndexOf(' - ') != -1 ? item?.title?.substring(0, item?.title?.lastIndexOf(' - ')) : item?.title}">기사 타이틀</span>
+                            </a>
+                            <div class="introduceSiteName" th:if="${item != null}"
+                                 th:text="${item.title != null && item.title.lastIndexOf(' - ') != -1 ? item.title.substring(item.title.lastIndexOf(' - ') + 3) : 'Click on the title to visit the news website.'}"
+                                 style="font-size: 12px;">뉴스 사이트명</div>
+                            <div class="introduceNewsDate" th:text="${item?.pubDate}"
+                                 style="font-size: 13px;">기사 날짜</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT NEWS로 이동하여 전체 뉴스 확인 -->
+<!--            <a href="/hlsystem/it_news" class="introduce-news-button allNews" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" type="button" title="뉴스 더보기">All News</a>-->
+                <a class="news-last-bt news-lastBt--pink news-lastBt-all" href="/hlsystem/it_news" type="button">All News</a>
+
+<!--            <script src="/js/introduce-itNews-button.js"></script>-->
+            <!-- History 끝 -->
+
+
+        </div>
+    </div>
+
+    <div class="introduce-wheel introduce-wheel3">
+        <div class="introduce-content3 changing-title">
+            <h1 data-aos="fade-right" data-aos-duration="1000">비즈니스 변화를
+                <br>이끌어가는 IT 전문 기업</h1>
+        </div>
+
+            <div class="introduce3-container" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                <div class="introduce3-wrap">
+                    <!--<img class="introduce3-wrap-img1" src="/files/introduce-1.jpg">-->
+                    <p class="introduce3-list introduce3-list1">
+                        <strong><i class="fas fa-building"></i>&nbsp;&nbsp;회사명</strong>
+                        <br>H&L SYSTEM
+                    </p>
+                </div>
+                <div class="introduce3-wrap">
+                    <p class="introduce3-list introduce3-list5">
+                        <strong><i class="fas fa-users"></i>&nbsp;&nbsp;임직원 수</strong>
+                        <br>23명
+                        <span>(2024년 2월 기준)</span>
+                    </p>
+                </div>
+                <div class="introduce3-wrap">
+                    <p class="introduce3-list introduce3-list2">
+                        <strong><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;설립년도</strong>
+                        <br>2004년 3월
+                    </p>
+                </div>
+                <div class="introduce3-wrap">
+                    <p class="introduce3-list introduce3-list3">
+                        <strong><i class="fas fa-flask"></i>&nbsp;&nbsp;기술연구소</strong>
+                        <br>2008년 8월 설립
+                    </p>
+                </div>
+                <div class="introduce3-wrap">
+                    <p class="introduce3-list introduce3-list4">
+                        <strong><i class="fas fa-coins"></i>&nbsp;&nbsp;매출액</strong>
+                        <br>87억 6,400만원
+                        <span>(2023년 12월 기준)</span>
+                    </p>
+                </div>
+                <div class="introduce3-wrap">
+                    <p class="introduce3-list introduce3-list6">
+                        <strong title="전화걸기"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;전화번호</strong>
+                        <a class="introduce3-contact-tel" href="tel:027395161">
+                            <br>02-739-5161
+                        </a>
+                    </p>
+                </div>
+            </div>
+        <div class="card-before-after">
+            <div class="businessCard">
+                <div class="businessCard-inner">
+                    <img class="businessCard-front" src="/files/businessCard-front.png" alt="">
+                    <img class="businessCard-back" src="/files/businessCard-back.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="introduce-dots">
+    <span class="introduce-dot" data-target="introduce-main"></span>
+    <span class="introduce-dot" data-target="introduce-wheel1-2"></span>
+    <span class="introduce-dot" data-target="introduce-wheel3-2"></span>
+    <span class="introduce-dot" data-target="introduce-wheel2"></span>
+    <span class="introduce-dot" data-target="introduce-wheel5"></span>
+    <span class="introduce-dot" data-target="introduce-wheel3"></span>
+</div>
+<div class="introduce-dots">
+    <span class="introduce-dot active" data-index="0"></span>
+    <span class="introduce-dot" data-index="1"></span>
+    <span class="introduce-dot" data-index="2"></span>
+    <span class="introduce-dot" data-index="3"></span>
+    <span class="introduce-dot" data-index="4"></span>
+    <span class="introduce-dot" data-index="5"></span>
+</div>
+
+<!-- introduce 휠 스크립트 -->
+<script src="/js/introduce-wheel.js"></script>
+
+<script src="/js/introduce-main.js"></script>
+<script src="/js/introduce-main-ending.js"></script>
+<script src="/js/underline--magical2.js"></script>
+<script src="/js/introduce-main-ending-small.js"></script>
+
+<!-- 솔루션 슬라이드 애니메이션 -->
+<script src="/js/introduce-solutions-slide.js"></script>
+
+<!--클릭 시 명함 뒤집기-->
+<!--<script src="/js/introduce-businessCard.js"></script>-->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var wheel = document.querySelector('.introduce-main');
+        wheel.classList.add('ending-loaded');
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var wheel = document.querySelector('.introduce-main');
+        wheel.classList.add('ending-sub-loaded');
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var wheel = document.querySelector('.introduce-main');
+        wheel.classList.add('changing-ending-sub-cursor-loaded');
+    });
+</script>
+<script>
+    // 8.8초 후에 클래스 추가하여 애니메이션 적용
+    setTimeout(function() {
+        document.querySelector('.introduce-background-overlay').classList.add('introduce-background-overlay-loaded');
+    }, 8800);
+</script>
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        var wheel = document.querySelector('.introduce-main');-->
+<!--        wheel.classList.add('waving-hand-loaded');-->
+<!--    });-->
+<!--</script>-->
+
+<!-- wheel1 애니메이션 -->
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        var wheel = document.querySelector('.introduce-wheel1');-->
+<!--        wheel.classList.add('loaded');-->
+<!--    });-->
+<!--</script>-->
+
+<!-- wheel2 스와이프 애니메이션 -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!--<script src="/js/introduce-wheel2-swiper.js"></script>-->
+
+<script src="/js/introduce-coetent3.js"></script>
+<!-- wheel3 wrap 애니메이션 -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var wheel = document.querySelector('.introduce-wheel3');
+        wheel.classList.add('loaded3');
+    });
+</script>
+
+<script src="/js/introduce-news-smokeAni.js"></script>
+<script src="/js/introduce-info-box.js"></script>
+
+<!-- 하단 -->
+<div class="main-bottom-container">
+    <img class="introduce-bottom-img" src="/files/main-bottom-space.jpg" alt="" introduce-bottom-img data-aos-delay="500" data-aos-duration="1000">
+    <p class="introduce-bottom-title">끊임없는 창의성과 열정을 가진 선도적인 IT 서비스</p>
+    <a class="introduce-bottom-button bottomBt--pink main-bottom-intro" href="introduce" type="button">회사소개</a>
+    <a class="introduce-bottom-button bottomBt--pink main-bottom-jobOpening" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+</div>
+
+<!-- 하단 -->
+<div class="introduce-bottom-last-container">
+    <a class="contact-last-bt contact-lastBt--pink contact-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+    <a class="contact-last-bt contact-lastBt--pink contact-lastBt-contact" href="contact" type="button">오시는길</a>
+</div>
+
+<div class="contact-bottom-info-container">
+    <p class="contact-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+    <p class="contact-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+    <p class="contact-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+</div>
+<!---->
+
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // 애니메이션 지속 시간 (1초)
+        offset: 200, // 트리거가 발생하는 위치 조정
+    });
+</script>
+
+</body>
+</html>

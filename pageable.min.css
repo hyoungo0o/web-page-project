@@ -1,0 +1,50 @@
+.pg-pips {
+    position: fixed;
+    z-index: 1000;
+}
+
+.pg-pips ul {
+    margin: 0;
+    padding: 0;
+}
+
+.pg-pips ul li {
+    width: 14px;
+    height: 14px;
+    margin: 7px;
+    position: relative;
+}
+
+.pg-pips ul li:hover a {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+}
+
+.pg-pips ul li:hover a.active {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    margin: -7px 0 0 -7px;
+    border-radius: 100%;
+}
+
+.pg-vertical .pg-pips {
+    right: 10px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+}
+
+.pg-vertical .pg-pips li {
+    display: block;
+}
+
+.pg-horizontal .pg-pips {
+    bottom: 10px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+}
+
+.pg-horizontal .pg-pips li {
+    display: inline-block;
+}

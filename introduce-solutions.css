@@ -1,0 +1,228 @@
+    /* Solutions */
+    .introduce-wheel3-2 {
+        /*background-image: url("/files/introduce-4.jpg");*/
+        background: #232323;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .introduce-solutions-title {
+        font-size: 3rem;
+        margin: 0 auto;
+        position: absolute;
+        text-align: center;
+        top: 18%;
+   }
+
+    .introduce-sol-slider {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        /*position: absolute;*/
+        display: flex;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: height 0.4s;
+        margin-top: 10%;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide {
+        position: absolute;
+        width: 550px;   /* 기본 슬라이드 너비 */
+        height: 350px;  /* 기본 슬라이드 높이 */
+        transition: all 0.4s;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        opacity: 0.5; /* 기본 투명도 설정 */
+        transform: scale(1); /* 기본 크기 설정 */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 수직 및 수평 중앙 정렬 */
+    }
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current {
+        opacity: 1;
+        width: 650px;   /* 현재 슬라이드 너비 확대 */
+        height: 450px;  /* 현재 슬라이드 높이 확대 */
+        z-index: 1; /* 현재 슬라이드가 앞에 오도록 설정 */
+        left: 50%; /* 가운데 정렬 */
+        transform: translateX(-50%) scale(1);
+        object-fix: cover;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.prev {
+        left: 35%; /* 왼쪽 위치 */
+        transform: translateX(-50%) scale(1);
+        filter: blur(2px);
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.next {
+        left: 65%; /* 오른쪽 위치 */
+        transform: translateX(-50%) scale(1);
+        filter: blur(2px);
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지를 컨테이너 크기에 맞게 조절 */
+        image-rendering: -webkit-optimize-contrast;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    .sol-etc-img {
+        object-position: center 28%;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide .introduce-sol-listTitle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Pretendard-Bold';
+        font-size: 50px;
+        text-align: center;
+        width: 100%;
+        line-height: 1.5;
+        box-sizing: border-box;
+        color: #ffffff;
+        text-decoration: none;
+        opacity: 0; /* 초기 상태에서 투명하게 설정 */
+        transition: all 0.3s ease;
+        z-index: 1; /* 텍스트가 이미지 위에 오도록 설정 */
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide .introduce-sol-listTitle h3 {
+        font-size: 1.3em;
+        letter-spacing: 2px;
+        font-weight: 100;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide .introduce-sol-listTitle em {
+        display: block;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover .introduce-sol-listTitle {
+        opacity: 1; /* 호버 시 투명도를 100%로 설정하여 표시 */
+        transform: translate(-50%, -50%);
+        transition-delay: 0.1s;
+        text-decoration: underline; /* 호버 시 텍스트 밑줄 */
+    }
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover img {
+        filter: blur(2px) brightness(0.5);
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover:before,
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover:after {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-top: 120px solid rgba(0, 0, 0, 0.4);
+        border-bottom: 120px solid rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transform: scale(1);
+        z-index: 0;
+        transition: all 0.5s ease;
+    }
+
+    .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:visited .introduce-sol-listTitle {
+        color: #ffffff;
+    }
+
+.introduce-sol-slideDot {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: -9rem;
+}
+
+.introduce-sol-slideDot .dot {
+    height: 8px;
+    width: 20%;
+    background-color: #ffffff;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.introduce-sol-slideDot .dot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: red;
+}
+
+.introduce-sol-slideDot .dot.animating::before {
+    animation: red-fill 4s linear forwards;
+}
+
+@keyframes red-fill {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.introduce-sol-slideDot .dot.active::before {
+    width: 100%; /* active 상태에서는 애니메이션이 끝나도록 설정 */
+}
+
+
+    /**/
+
+    /* 노트북 화면 */
+    @media screen and (max-width: 1919px) {
+        .introduce-wheel3-2 {
+        background: linear-gradient(0deg, #e1e1e1 2%, #b6b6b6 8%, #505050 31.1%, #232323 50.1%);
+        }
+        .introduce-solutions-title {
+            top: 18%;
+        }
+        .introduce-sol-slider > .introduce-sol-sliders {
+            margin-top: 12%;
+        }
+        .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide {
+            width: 450px;
+            height: 250px;
+        }
+        .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current {
+            width: 550px;
+            height: 350px;
+        }
+        .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide .introduce-sol-listTitle {
+            font-size: 40px;
+        }
+        .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover:before,
+        .introduce-sol-slider > .introduce-sol-sliders > .introduce-sol-slide.current:hover:after {
+            border-top: 90px solid rgba(0, 0, 0, 0.4);
+            border-bottom: 90px solid rgba(0, 0, 0, 0.4);
+        }
+        .introduce-sol-slideDot {
+            bottom: -6rem;
+        }
+        .introduce-sol-slideDot .dot {
+            height: 8px;
+            width: 19.3%;
+            margin: 0 5px;
+        }
+        .sol-etc-img {
+            object-position: unset;
+        }
+    }

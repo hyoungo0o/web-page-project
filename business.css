@@ -1,0 +1,293 @@
+.business-body-background {
+    background: #fcfcfc;
+}
+
+.business-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    position: absolute;
+    top: -18%;
+    color: black;
+}
+.business-container::after {
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 297px;
+    background: #232323;
+    z-index: -2;
+    top: 0;
+}
+
+.business-main-headline-box {
+    color: white;
+    text-align: left;
+    position: relative;
+    top: 21rem;
+    line-height: 1;
+    margin-left: 10.2%;
+    color: white;
+    transition: all 1s;
+}
+.business-main-headline-box.headlineShrink {
+    top: 37rem;
+    margin-left: 14.2%;
+}
+
+.business-main-headline {
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+h2.business-main-headline::after {
+    content: '';
+    position: absolute;
+    width: 213px;
+    height: 1.5px;
+    background: red;
+    top: 60%;
+    left: 0%;
+    width: 383px;
+}
+.business-main-headline-sub {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}
+
+.business-main-img {
+    width: 100vw;
+    height: 423px;
+    margin-bottom: 3rem;
+    /* margin-top: 22rem; */
+    transition: all 1s ease;
+    /* border-radius: 30px; */
+    transform: scale(1);
+    top: -70px;
+    position: relative;
+    margin: 0 auto;
+    z-index: -1;
+    margin-bottom: 30rem;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.business-main-img.businessShrink {
+    transform: scale(0.8) !important;
+    border-radius: 40px;
+    margin-top: 14.35rem;
+    top: unset;
+    filter: unset;
+}
+
+.business-credit-img img {
+    filter: brightness(0.5);
+}
+
+.scrolling-text-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    line-height: 2;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    top: -27rem;
+    background: linear-gradient(0deg, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.738) 19%, hsla(0, 0%, 0%, 0.541) 34%, hsla(0, 0%, 0%, 0.382) 47%, hsla(0, 0%, 0%, 0.278) 56.5%, hsla(0, 0%, 0%, 0.194) 65%, hsla(0, 0%, 0%, 0.126) 73%, hsla(0, 0%, 0%, 0.075) 80.2%, hsla(0, 0%, 0%, 0.042) 86.1%, hsla(0, 0%, 0%, 0.021) 91%, hsla(0, 0%, 0%, 0.008) 95.2%, hsla(0, 0%, 0%, 0.002) 98.2%, hsla(0, 0%, 0%, 0) 100%);
+    border-radius: 50%;
+    color: white;
+    right: 21%;
+    filter: drop-shadow(-7px 6px 6px #303030);
+}
+.scrolling-text-container::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(0deg, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.738) 19%, hsla(0, 0%, 0%, 0.541) 34%, hsla(0, 0%, 0%, 0.382) 47%, hsla(0, 0%, 0%, 0.278) 56.5%, hsla(0, 0%, 0%, 0.194) 65%, hsla(0, 0%, 0%, 0.126) 73%, hsla(0, 0%, 0%, 0.075) 80.2%, hsla(0, 0%, 0%, 0.042) 86.1%, hsla(0, 0%, 0%, 0.021) 91%, hsla(0, 0%, 0%, 0.008) 95.2%, hsla(0, 0%, 0%, 0.002) 98.2%, hsla(0, 0%, 0%, 0) 100%);
+    border-radius: 50%;
+    left: 0%;
+    top: 0px;
+    opacity: 0.1;
+}
+
+.scrolling-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: scrollText 10s linear infinite;
+}
+
+.business-credits {
+    position: relative;
+    left: 100%;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.business-credit-title {
+    font-size: 2.5rem;
+    text-align: end;
+    position: relative;
+    color: black;
+    top: -49rem;
+    left: 20%;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+.business-credit-title::after {
+    content: '';
+    position: absolute;
+    width: 247px;
+    height: 48.5px;
+    background: #ccccff;
+    left: 15%;
+    top: 55.5%;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    animation: business-underline 5s linear infinite; /* 총 5초로 변경 */
+    animation-delay: 2s;
+    z-index: -1;
+}
+
+/* 형광펜(밑줄) 애니메이션 */
+@keyframes business-underline {
+    0% {
+        transform: scaleX(0);
+    }
+    40% {
+        transform: scaleX(1); /* 2초 동안 실행되도록 40%까지 */
+    }
+    100% {
+        transform: scaleX(1); /* 나머지 60%는 유지 (대기 시간 포함) */
+    }
+}
+
+
+
+
+.business-list-container {
+    width: 80%;
+    max-width: 1500px;
+    display: grid;
+    grid-gap: 30px;
+    margin: auto 0;
+    grid-template-columns: repeat(15, 1fr);
+    position: relative;
+    top: -30rem;
+    z-index: 0;
+    margin-bottom: -14rem;
+}
+
+.business-wrap {
+   cursor: pointer;
+   overflow: hidden;
+   border-radius: 12px;
+   background-color: white;
+   grid-column: span 3;
+   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.017), 0 6.7px 5.3px rgba(0, 0, 0, 0.024), 0 12.5px 10px rgba(0, 0, 0, 0.03), 0 22.3px 17.9px rgba(0, 0, 0, 0.036), 0 41.8px 33.4px rgba(0, 0, 0, 0.043), 0 100px 80px rgba(0, 0, 0, 0.06);
+   height: 190px;
+   padding: 20px;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
+   position: relative;
+   width: 100%;
+}
+.business-wrap:hover {
+    filter: brightness(0.7);
+}
+
+.business-wrap:after {
+/*    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url("/files/introduce3-box-hl.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+    top: -7px;
+    right: 4px;
+    transition: 0.3s;
+    transition-property: opacity, transform;
+    opacity: 0;
+    transform: translateY(10px);*/
+}
+
+/*.business-list {
+    height: 26px;
+    opacity: 1;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(149 149 149 / 20%);
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    position: relative;
+}*/
+/*.business-list.business-active {
+    height: 8px;
+    background-color: rgb(160 9 255 / 50%);
+    font-size: 1.5rem;
+    top: -2px;
+    position: relative;
+}*/
+
+.business-wrap.business-active {
+    grid-row: 1;
+    grid-column: 1 / span 14;
+    height: 210px;
+    order: 0;
+}
+.business-wrap.business-active:hover {
+    filter: unset;
+}
+
+.business-wrap.business-active:after {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.business-wrap.business-inactive {
+   grid-column: span 2;
+   filter: brightness(0.9);
+}
+.business-wrap.business-inactive:hover {
+    filter: unset;
+}
+
+
+.business-wrap-img {
+   object-fit: cover;
+   width: auto;
+   height: auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* 수평 및 수직 중앙으로 이동 */
+   max-width: 100%;
+   max-height: 100%;
+}
+.business-wrap.business-active img {
+    margin: 0 auto;
+}
+
+
+.business-bottom-last-box {
+    position: relative;
+    bottom: -129rem;
+}

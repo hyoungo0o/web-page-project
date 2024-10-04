@@ -1,0 +1,151 @@
+.main-bottom-container {
+    width: 100vw;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* 이미지가 컨테이너를 벗어나지 않도록 */
+}
+
+.main-bottom-img {
+    width: 100%;
+    height: 100%; /* 부모 컨테이너의 높이에 맞춤 */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.5;
+    box-sizing: border-box;
+}
+
+.main-bottom-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 컨테이너를 완전히 채우도록 설정 (잘리지 않음) */
+}
+
+.main-bottom-title {
+    font-family: 'Pretendard-ExtraBold';
+    width: 100%;
+    /*color: #ffffff;*/
+    z-index: 2;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vmin;
+    box-sizing: border-box;
+}
+
+
+.main-bottom-intro:visited,
+.main-bottom-jobOpening:visited {
+    /*color: #ffffff;*/
+}
+
+/* 버튼 애니메이션 요소들 */
+/*:root {
+  --button-height: 50px;
+}
+.main-bottom-button {
+  background: 4px solid white;
+  border: none;
+  display: inline-block;
+  height: var(--button-height);
+  overflow: hidden;
+  padding: 0 15px;
+  position: relative;
+  width: 90px;
+  max-width: 130px;
+}
+
+.main-bottom-button,
+.main-bottom-svg {
+  margin-top: 150px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-family: 'Pretendard-Bold';
+  font-size: 1em;
+  text-transform: uppercase;
+  opacity: 1;
+  z-index: 9999;
+}*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-bottom-button {
+    display: inline-block;
+    padding: 0.6em 1.6em;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 250ms ease;
+    z-index: 2;
+    top: 4.5rem;
+    margin-left: 1rem;
+}
+
+.main-bottom-button {
+    color: white;
+}
+
+.main-bottom-button:hover:after {
+    animation-name: bottomBgin;
+    transform: skew(-45deg) translate(-50%);
+}
+
+.main-bottom-button:after {
+    content: '';
+    z-index: -1;
+    width: 150%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    animation-name: bottomBgout;
+    animation-duration: 400ms;
+    transform: skew(-45deg) translate(-150%);
+}
+
+.bottomBt--pink {
+    border: 2px solid #c2c2c2;
+    /*color: #ffffff;*/
+    transition: border-color 250ms ease;
+}
+
+.bottomBt--pink:after {
+    background-color: #D2A3A2;
+}
+
+
+@keyframes bottomBgin {
+    from {
+        transform: skew(-45deg) translate(-150%);
+    }
+    to {
+        transform: skew(-45deg) translate(-50%);
+    }
+}
+
+@keyframes bottomBgout {
+    from {
+        transform: skew(-45deg) translate(-50%);
+    }
+    to {
+        transform: skew(-45deg) translate(50%);
+    }
+}
+

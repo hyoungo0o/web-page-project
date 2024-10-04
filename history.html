@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>hlsystem.com</title>
+    <link rel="stylesheet" href="/css/history.css">
+    <link rel="stylesheet" href="/css/history2.css">
+    <link rel="stylesheet" href="/css/contact-map.css">
+    <link rel="stylesheet" href="/css/solutions-xdmp.css">
+    <link rel="stylesheet" href="/css/solutions-sqle.css">
+    <link rel="stylesheet" href="/css/screen-1919px.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</head>
+<body class="history-body-overlay">
+
+<!-- 상단 -->
+<div class="contact-hl-top-fixed">
+    <div class="container">
+        <a href="/hlsystem/about/introduce">
+            <img class="contact-company-logo" src="/files/company-logo.png" alt="회사 로고">
+        </a>
+        <div class="history-nav-links">
+            <ul id="contact-nav-1">
+                <li class="slide1"></li>
+                <li class="slide2"></li>
+                <li id="hlsystem">
+                    <a href="#/">H&L SYSTEM<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/about/introduce">회사소개</p>
+                        <p data-url="/hlsystem/about/ceo">CEO</p>
+                        <p data-url="/hlsystem/about/history">History</p>
+                        <p data-url="/hlsystem/about/contact">오시는길</p>
+                    </div>
+                </li>
+                <li id="solutions">
+                    <a href="#/">SOLUTIONS<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/solutions/solutions_xdmp">XDMP</p>
+                        <p data-url="/hlsystem/solutions/solutions_sqle">SQLe</p>
+                        <!--                        <p data-url="/hlsystem/solutions/solutions_insurance">Banka Insulance</p>-->
+                        <p data-url="/hlsystem/solutions/solutions_etc/">Etc</p>
+                    </div>
+                </li>
+
+                <li><a href="/hlsystem/business">BUSINESS</a></li>
+                <li><a href="/hlsystem/it_news">IT NEWS</a></li>
+                <li id="recruit">
+                    <a href="#/">RECRUIT<i class="fa fa-caret-down contact-nav-arrow" aria-hidden="true"></i></a>
+                    <div class="contact-dropdown contact-mainDropDown">
+                        <p data-url="/hlsystem/recruit/recruit_ideal_candidate">인재상</p>
+                        <p data-url="/hlsystem/recruit/recruit_info">채용정보</p>
+                    </div>
+                </li>
+                <!--                <li><a href="/hlsystem/contact">CONTACT</a></li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/js/contact-nav.js"></script>
+<script src="/js/contact-nav-dropDown.js"></script>
+
+<div class="scroll-progress"></div>
+
+<!-- 프로그래스바 스크립트 -->
+<script src="/js/main-progressBar.js"></script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.contact-hl-top-fixed');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    document.querySelectorAll('p[data-url]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            var url = element.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+</script>
+<!---->
+
+<div class="contact-container">
+    <h3 class="about">About Us</h3>
+    <div class="contact-wrap">
+        <a href="/hlsystem/about/introduce" class="contact-wrap-tap">회사소개</a>
+        <a href="/hlsystem/about/ceo" class="contact-wrap-tap">CEO</a>
+        <a href="/hlsystem/about/history" class="contact-wrap-tap  active">History</a>
+        <a href="/hlsystem/about/contact" class="contact-wrap-tap">오시는길</a>
+    </div>
+</div>
+
+<!-- 탭 active 스크립트 -->
+<script src="/js/contact-active.js"></script>
+
+
+
+<div class="page">
+    <div class="page-vir"></div>
+    <div class="views">
+        <div class="view view--1">
+            <div class="view__inner view__inner_2004">
+                <h2 style="font-size: 1.6rem; line-height: 2;">
+                    - 텔레마케팅 솔루션(H-WTS) v.1.0 출시
+                    <br>- 소프트웨어 사업자
+                    <br>- (주)에이치앤엘시스템 설립
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - 모바일 구축 솔루션(XMAS Solution) 공급 계약
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2008">
+                <h2 style="font-size: 1.6rem; line-height: 2;">
+                    - 태양광 모니터링 솔루션(H-SMS) v.1.0 출시
+                    <br> - (주)에이치앤엘시스템 기술부설연구소 설립
+                    <br> - 자본금 증액 2억 5천만원
+                    <br> - IBM 협력업체 등록
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2004">
+                <h2 style="font-size: 1.6rem; line-height: 2;">
+                    - INNO-BIZ인증 / 벤처기업
+                    <br> - H/W 사업부문 신설
+                    <br> - 보험 대리점 관리 솔루션(H-AMS) v.1.0 출시
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - 삼성SDS 파트너 협약
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - 보험 대리점 관리 솔루션(H-AMS) v.2.0 출시
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - SK C&C 파트너 협약
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2015">
+                <h2 style="font-size: 1.6rem; line-height: 2;">
+                    - 아시아나IDT 파트너 협약
+                    <br> - INNO-BIZ 인증
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - IBM 파트너 협약
+                </h2>
+            </div>
+        </div>
+        <div class="view view--1">
+            <div class="view__inner view__inner_2007">
+                <h2 style="font-size: 1.6rem;">
+                    - CLOUDGRAM 협력업체 등록
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="timeline__wrapper">
+        <div class="timeline">
+            <ul class="timeline__list">
+                <li class="timeline__item timeline__item--active">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img1.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2004</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img2.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2007</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img3.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2008</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb timeline__item__thumb__2009" src="/files/history-img4.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2009</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img5.png" />
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2010</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img6.png" />
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2012</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img7.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2013</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img8.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2015</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img9.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2017</div>
+                </li>
+                <li class="timeline__item">
+                    <a class="timeline__link" href="#">
+                        <div class="timeline__item__point"></div>
+                    </a>
+                    <div class="timeline__item__content">
+                        <img class="timeline__item__thumb" src="/files/history-img10.png"/>
+                        <div class="timeline__item__shadow"></div>
+                    </div>
+                    <div class="timeline__item__year">2021</div>
+                </li>
+            </ul>
+            <div class="timeline__path">
+                <div class="timeline__path__triangle timeline__path__triangle--moving"></div>
+                <div class="timeline__path__triangle timeline__path__triangle--static-1"></div>
+                <div class="timeline__path__triangle timeline__path__triangle--static-2"></div>
+                <div class="timeline__path__triangle timeline__path__triangle--static-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- history timeline 애니메이션 -->
+<script src="/js/history-timeline.js"></script>
+
+
+
+
+
+
+
+<!-- 하단 -->
+<div class="history-bottom-last-box">
+    <div class="contact-bottom-last-container">
+        <a class="contact-last-bt contact-lastBt--pink contact-lastBt-job" href="/hlsystem/recruit/recruit_ideal_candidate" type="button">채용정보</a>
+        <a class="contact-last-bt contact-lastBt--pink contact-lastBt-contact" href="/hlsystem/about/contact/" type="button">오시는길</a>
+    </div>
+
+    <div class="contact-bottom-info-container">
+        <p class="contact-bottom-info1">H&L SYSTEM Co., Ltd.</p>
+        <p class="contact-bottom-info2">6F, 22, Saemunan-ro, Jung-gu, Seoul, Korea 04516</p>
+        <p class="contact-bottom-info3">T.+82-2-739-5161  F.+82-2-725-7922</p>
+    </div>
+</div>
+<!---->
+
+<!-- 최상단으로 이동하는 버튼 -->
+<a href="#" class="top-button" title="최상단으로 이동">
+    TOP <i class="fas fa-arrow-up"></i> <!-- Font Awesome 화살표 아이콘 -->
+</a>
+
+<!-- TOP 버튼 스크립트 -->
+<script src="/js/main-topButton.js"></script>
+<script src="/js/main-topButton2.js"></script>
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true // 애니메이션이 한 번만 실행되도록 설정
+    });
+</script>
+
+</body>
+</html>
